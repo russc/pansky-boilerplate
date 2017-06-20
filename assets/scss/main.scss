@@ -11,6 +11,10 @@
 // Global styles such as non-vendor resets, typography, etc.
 @import 'base/!module';
 
+// UTILITIES
+// Helper utility styles for adjusting margin, padding, etc.
+@import 'utilities/!module';
+
 // COMPONENTS
 // Resuable / independant module components (buttons, sliders, etc.)
 @import 'components/!module';
