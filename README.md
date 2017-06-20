@@ -148,7 +148,7 @@ Primary comment blocks define new sections (one per section), while secondary bl
 
 ## Atom.io snippets
 
-CoffeeScript code for [Atom.io](https://atom.io)'s snippets for easier writing; full ***snippets.cson*** available on my [Gist](https://gist.github.com/williampansky/869225abbb4ee5278ef9c9ea7166d2f1).
+CoffeeScript code for [Atom.io](https://atom.io)'s snippets for easier writing; full **snippets.cson** available on my [Gist](https://gist.github.com/williampansky/869225abbb4ee5278ef9c9ea7166d2f1).
 
 ```cson
 ###########################################
