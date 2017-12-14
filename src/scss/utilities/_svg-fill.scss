@@ -1,0 +1,27 @@
+// ========================================================================
+// UTILITIES => SVG FILL
+// ========================================================================
+
+/***
+SUMMARY
+=======================
+Fill an SVG with a particular color via this utility class.
+
+USAGE
+=======================
+<div class="display-flex" />
+***/
+
+// Throw our desired outputs into an array
+$svgFills:
+  (primary,     color(primary, base)),
+  (secondary,   color(secondary, base)),
+  (accent,      color(accent, base)),
+  (transparent, rgba(0, 0, 0, 0));
+
+// Loop our array to render out a class for each prop
+/* stylelint-disable */
+@each $key, $value in $svgFills {
+  .svg-fill-#{$key} { fill: $value !important; }
+}
+/* stylelint-enable */

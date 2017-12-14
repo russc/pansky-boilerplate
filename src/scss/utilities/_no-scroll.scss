@@ -1,0 +1,20 @@
+// ========================================================================
+// UTILITIES => DISPLAY HELPERS
+// ========================================================================
+
+/***
+SUMMARY
+=======================
+This class is placed on the `<body>` when opening fullscreen menus and modals 
+to prevent the document from scrolling while scrolling inside said menus or modals.
+
+USAGE
+=======================
+document.body.classList.toggle('no-scroll');
+***/
+
+.no-scroll {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}

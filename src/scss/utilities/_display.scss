@@ -1,0 +1,29 @@
+// ========================================================================
+// UTILITIES => DISPLAY HELPERS
+// ========================================================================
+
+/***
+SUMMARY
+=======================
+Classes to apply display properties.
+
+USAGE
+=======================
+<div class="display-flex" />
+***/
+
+// Throw our desired outputs into an array
+$displays:
+  (block,   block),
+  (inline,  inline-block),
+  (flex,    flex),
+  (initial, initial),
+  (inherit, inherit),
+  (none,    none);
+
+// Loop our array to render out a class for each prop
+/* stylelint-disable */
+@each $key, $value in $displays {
+  .display-#{$key} { display: $value !important; }
+}
+/* stylelint-enable */

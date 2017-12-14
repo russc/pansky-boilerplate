@@ -1,8 +1,13 @@
 {
-  "presets": ["es2015"],
-  "env": {
-    "production": {
-      "presets": ["babili"]
-    }
-  }
+    "presets": [
+        ["@babel/preset-env", {
+            "targets": {
+                "browsers": [
+                    "last 2 versions",
+                    "ie >= 9",
+                    "iOS >= 8"
+                ]
+            }
+        }]
+    ]
 }

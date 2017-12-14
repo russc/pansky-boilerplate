@@ -1,0 +1,111 @@
+// ========================================================================
+// ABSTRACTS => DEFINITIONS => COLORS
+// ========================================================================
+
+
+/***
+SUMMARY
+=======================
+This document contains any and all necessary variables and mapping for this
+project's color scheme. Feel free to edit the variables as needed. However,
+please take care when editing the Sass color map(s).
+
+USAGE
+=======================
+.foo {
+  color: color(primary, base);
+}
+
+DOCS
+=======================
+Here's a breakdown of how to access values from inside nested color maps in
+conjunction with our included function at the end of this file:
+
+.foo { color: color(primary, base); }
+  ^      ^      ^      ^      ^
+  1      2      3      4      5
+
+1.  HTML DOM element.
+2.  CSS property selector.
+3.  Sass map selector; this example: color = $colors:( ... );
+4.  Map $key selector; this accesses the "primary" nested map.
+5.  Map $value selector; this accesses the "base" value of our "primary" map.
+
+Another way to think of this function is as follows:
+element { property: $mapName($key, $value); }
+
+FURTHER READING
+=======================
+https://codepen.io/jakealbaugh/post/using-sass-functions-to-access-complex-variable-maps
+***/
+
+
+
+// COLOR DEFINITION VARIABLES
+// ========================================================================
+// Define your colors here
+$color-primary:       #e50000 !default;
+$color-secondary:     #39c !default;
+$color-accent:        #e5e53e !default;
+
+$color-black:         #000 !default;
+$color-white:         #fff !default;
+$color-gray:          #767676 !default;
+
+$color-lighten-amount:  15%;
+$color-darken-amount:   20%;
+$color-trans-amount:    .5;
+
+
+
+// SASS COLOR MAP(s)
+// ========================================================================
+$colors: (
+  primary: (
+    base:       $color-primary,
+    light:      mix(white, $color-primary, $color-lighten-amount),
+    dark:       mix(black, $color-primary, $color-darken-amount),
+    trans:      transparentize($color-primary, $color-trans-amount)
+  ),
+  secondary: (
+    base:       $color-secondary,
+    light:      mix(white, $color-secondary, $color-lighten-amount),
+    dark:       mix(black, $color-secondary, $color-darken-amount),
+    trans:      transparentize($color-secondary, $color-trans-amount)
+  ),
+  accent: (
+    base:       $color-accent,
+    light:      mix(white, $color-accent, $color-lighten-amount),
+    dark:       mix(black, $color-accent, $color-darken-amount),
+    trans:      transparentize($color-accent, $color-trans-amount)
+  ),
+  black: (
+    base:       $color-black,
+    light:      mix(white, $color-black, $color-lighten-amount),
+    trans:      transparentize($color-black, $color-trans-amount)
+  ),
+  white: (
+    base:       $color-white,
+    dark:       mix(black, $color-white, $color-darken-amount),
+    trans:      transparentize($color-white, $color-trans-amount)
+  ),
+  gray: (
+    base:       $color-gray,
+    light:      mix(white, $color-gray, $color-lighten-amount),
+    dark:       mix(black, $color-gray, $color-darken-amount),
+    trans:      transparentize($color-gray, $color-trans-amount)
+  )
+);
+
+
+// COLOR-MAP NAMING & CALL FUNCTION
+// ========================================================================
+// Retrieve color from $colors map; e.g. `color(base, primary)`
+@function color($color-name, $color-variant:null) {
+  // color variant is optional
+  @if ($color-variant != null) {
+    @return map-get(map-get($colors, $color-name), $color-variant);
+  } @else {
+    @return map-get($colors, $color-name);
+  }
+}

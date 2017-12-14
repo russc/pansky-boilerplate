@@ -1,0 +1,69 @@
+// ========================================================================
+// UTILITIES => FLEX UTILS
+// ========================================================================
+
+/***
+SUMMARY
+=======================
+Classes to apply various flex properties.
+
+USAGE
+=======================
+<div class="display-flex flex-align-end" />
+***/
+
+
+//_____________________________________
+// flex => align-items
+$align-items:
+  (baseline,  baseline),
+  (center,    center),
+  (start,     flex-start),
+  (end,       flex-end),
+  (stretch,   stretch);
+
+@each $align-items, $item in $align-items {
+  .flex-align-#{$align-items} { align-items: $item; }
+}
+
+
+//_____________________________________
+// flex => justify-content
+$justify-content:
+  (baseline,  baseline),
+  (center,    center),
+  (start,     flex-start),
+  (end,       flex-end),
+  (evenly,    space-evenly),
+  (around,    space-around),
+  (between,   space-between),
+  (stretch,   stretch);
+
+@each $justify-content, $item in $justify-content {
+  .flex-justify-#{$justify-content} { justify-content: $item; }
+}
+
+
+//_____________________________________
+// flex => flex-wrap
+$flex-wrap:
+  (wrap,          wrap),
+  (nowrap,        nowrap),
+  (wrap-reverse,  wrap-reverse);
+
+@each $flex-wrap, $item in $flex-wrap {
+  .flex-#{$flex-wrap} { flex-wrap: $item; }
+}
+
+
+//_____________________________________
+// flex => flex-direction
+$flex-direction:
+  (column,          column),
+  (column-reverse,  column-reverse),
+  (row,             row),
+  (row-reverse,     row-reverse);
+
+@each $flex-direction, $item in $flex-direction {
+  .flex-#{$flex-direction} { flex-direction: $item; }
+}

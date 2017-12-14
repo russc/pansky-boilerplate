@@ -1,0 +1,212 @@
+// ========================================================================
+// ABSTRACTS => SETTINGS
+// ========================================================================
+// Define your project's global settings here.
+
+/**
+ * | TABLE OF CONTENTS
+ * =======================
+ * |– TRANSITIONS
+ * |  |- ease
+ * |
+ * |– SHADOWS
+ * |  |- depths
+ * |
+ * | ...
+ */
+
+
+
+// ========================================================================
+// TRANSITIONS
+// ========================================================================
+$transition-ease-fast:                  100ms ease-in-out;
+$transition-ease-normal:                300ms ease-in-out;
+$transition-ease-slow:                  600ms ease-in-out;
+$transition-ease-slower:                900ms ease-in-out;
+
+
+
+// ========================================================================
+// SHADOWS
+// ========================================================================
+// Material Design Box Shadows: https://codepen.io/sdthornton/pen/wBZdXq
+$shadow-material-depth-1:               0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+$shadow-material-depth-2:               0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+$shadow-material-depth-3:               0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+$shadow-material-depth-4:               0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+$shadow-material-depth-5:               0 19px 38px rgba(0, 0, 0, .3), 0 15px 12px rgba(0, 0, 0, .22);
+$shadow-material-depth-6:               0 23px 38px rgba(0, 0, 0, .3), 0 19px 12px rgba(0, 0, 0, .22);
+$shadow-material-transition:            all .3s cubic-bezier(.25, .8, .25, 1);
+
+
+
+// ========================================================================
+// GRID SETTINGS
+// ========================================================================
+// GRID SETTINGS => GLOBALS
+$col-full-max-width:                    none;
+$col-full-padding:                      0;
+
+// -----------------------------------------
+// GRID SETTINGS => ELEMENTOR SECTIONS
+$elementor-boxed-max-width:             1600px;
+
+
+
+// ========================================================================
+// TYPOGRAPHY
+// ========================================================================
+// TYPOGRAPHY => HEADINGS => GLOBALS
+$type-headings-color:                   color(primary, base);
+$type-headings-font-weight:             900;
+$type-headings-text-transform:          uppercase;
+
+// -----------------------------------------
+// TYPOGRAPHY => HEADINGS => SIZES
+// Sizes based on the 1.618 Golden Ratio
+// http://type-scale.com/
+$type-headings-h1-size:                 4.25rem;
+$type-headings-h2-size:                 2.625rem;
+$type-headings-h3-size:                 1.625rem;
+$type-headings-h4-size:                 1rem;
+$type-headings-h5-size:                 .825rem;
+$type-headings-h6-size:                 .625rem;
+
+// -----------------------------------------
+// TYPOGRAPHY => HEADINGS => LINE HEIGHTS
+$type-headings-h1-line-height:          .75;
+$type-headings-h2-line-height:          .875;
+$type-headings-h3-line-height:          1;
+$type-headings-h4-line-height:          1;
+$type-headings-h5-line-height:          1;
+$type-headings-h6-line-height:          1;
+
+// -----------------------------------------
+// TYPOGRAPHY => UTILITIES => TEXT LEAD
+$type-text-lead-font-size:              1.25rem;
+$type-text-lead-font-weight:            normal;
+$type-text-lead-text-transform:         none;
+
+
+
+// ========================================================================
+// NAVBAR
+// ========================================================================
+// NAVBAR => GLOBALS
+$navbar-logo-max-width:                 100px;
+$navbar-border-color:                   color(gray, base);
+$navbar-wrapper-box-shadow:             0 2px 3px rgba(0, 0, 0, .02), 0 2px 2px rgba(0, 0, 0, .14);
+$navbar-wrapper-padding:                0;
+$navbar-wrapper-inner-padding:          10px;
+$navbar-wrapper-margin:                 0 auto;
+$navbar-wrapper-max-width:              1600px;
+
+$navbar-link-font-weight:               bold;
+$navbar-link-font-size:                 1.25rem;
+$navbar-link-text-transform:            uppercase;
+$navbar-link-transition-speed:          $transition-ease-normal;
+
+$navbar-search-background-color:        transparent;
+$navbar-search-box-shadow:              none;
+$navbar-search-border:                  1px solid color(gray, base);
+
+
+
+// ========================================================================
+// MEGA MENU
+// ========================================================================
+$megamenu-box-shadow:                   $shadow-material-depth-6;
+
+
+
+// ========================================================================
+// BREADCRUMBS
+// ========================================================================
+$breadcrumb-max-width:                  1600px;
+$breadcrumb-padding:                    10px;
+$breadcrumb-margin:                     0 auto;
+
+
+
+// ========================================================================
+// ENTRY HEADER (h1)
+// ========================================================================
+$content-header-max-width:              1600px;
+$content-header-padding:                10px;
+$content-header-margin:                 0 auto;
+
+
+
+// ========================================================================
+// FOOTER
+// ========================================================================
+// FOOTER => WRAPPER
+$footer-wrapper-max-width:              1600px;
+$footer-wrapper-padding:                10px;
+$footer-wrapper-margin:                 0 auto;
+
+// -----------------------------------------
+// FOOTER => WIDGET TITLES
+$footer-widget-title-color:             #fff;
+$footer-widget-title-font-size:         1rem;
+$footer-widget-title-font-weight:       bold;
+$footer-widget-title-text-transform:    uppercase;
+
+// -----------------------------------------
+// FOOTER => WIDGET MENU LINKS
+$footer-widget-menu-links-color:        color(gray, base);
+$footer-widget-menu-links-color-hover:  #fff;
+$footer-widget-links-transition:        $transition-ease-slower;
+$footer-widget-links-transition-hover:  $transition-ease-fast;
+
+// -----------------------------------------
+// FOOTER => WIDGET MENU LINKS => CURRENT MENU ITEM
+$footer-menu-current-icon:              '\f0da'; // fontawesome.io/icon/caret-right/
+$footer-menu-current-color:             #fff;
+$footer-menu-current-font-weight:       bold;
+$footer-menu-current-text-transform:    uppercase;
+
+
+
+// ========================================================================
+// PAGES
+// ========================================================================
+// PAGES => PRODUCTS
+$products-page-max-width:             1600px;
+$products-page-padding:               10px;
+$products-page-margin:                0 auto;
+
+
+
+// ========================================================================
+// BUTTONS
+// ========================================================================
+// BUTTONS => GLOBAL
+$button-global-border-radius:         0;
+$button-global-transition-speed:      $transition-ease-normal;
+$button-global-font-weight:           bold;
+$button-global-text-transform:        uppercase;
+
+// -----------------------------------------
+// BUTTONS => DEFAULT
+// forked via https://bttn.surge.sh/ 'btn-fill'
+$button-default-color:                #fff;
+$button-default-color-hover:          color(black, light);
+$button-default-background:           color(black, light);
+$button-default-background-hover:     #fff;
+$button-default-border-size:          2px;
+$button-default-border-style:         solid;
+$button-default-border-color:         transparent;
+$button-default-border-color-hover:   color(black, light);
+
+// -----------------------------------------
+// BUTTONS => RADIOACTIVE
+// http://zurb.com/playground/radioactive-buttons
+
+// -----------------------------------------
+// BUTTONS => SUBMIT
+$button-form-submit-color:            color(primary, base);
+$button-form-submit-color-hover:      color(secondary, base);
+$button-form-submit-background:       color(secondary, base);
+$button-form-submit-background-hover: color(primary, base);
