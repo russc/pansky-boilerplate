@@ -45,6 +45,7 @@
  * |  |  |- deployTask()
  * |  |  |- exportTask()
  * |  |  |- statsTask()
+ * |  |  |- docsTask()
  * |
  * |– LINKS & RESOURCES
  * |  |- ...
@@ -77,6 +78,7 @@ const gulp          = require('gulp'),
     postcss         = require('gulp-postcss'),
     rename          = require("gulp-rename"),
     sass            = require('gulp-sass'),
+    sassdoc         = require('sassdoc'),
     size            = require('gulp-size'),
     sourcemaps      = require('gulp-sourcemaps'),
     uglify          = require('gulp-uglify'),
@@ -159,6 +161,7 @@ gulp.task('default', [ // e.g. CLI command: 'gulp'
     'sass', 
     'images', 
     'deploy', 
+    'docs', 
     'watch'
 ], defaultTask);
 gulp.task('deploy',     deployTask);
@@ -167,6 +170,7 @@ gulp.task('images',     imageTask);
 gulp.task('reference',  referenceTask);
 gulp.task('sass',       sassTask);
 gulp.task('stats',      statsTask);
+gulp.task('docs',       docsTask);
 gulp.task('test',       testTask);
 gulp.task('watch',      watchTask);
 
@@ -183,6 +187,7 @@ imageTask.description       = `Optimizes images in ${paths.img}`;
 referenceTask.description   = '-';
 sassTask.description        = `Run Stylelint and PostCSS, compile Sass, then save to ${paths.sass}`;
 statsTask.description       = 'Analyzes CSS and returns a comprehensive report object.';
+docsTask.description        = 'Parse SCSS and compile SassDoc comments to docs/ dir.';
 testTask.description        = '-';
 watchTask.description       = 'Watches files for changes, compiles on file saves, and reloads BrowserSync if necessary.';
 
@@ -413,6 +418,37 @@ function statsTask() {
 
 
 // ========================================================================
+// TASK => SASSDOCS
+// ========================================================================
+function docsTask() {
+    // display cli log msg
+    console.log(color('✅  ', 'WHITE') + color('docsTask()', 'GREEN'));
+    
+    var options = {
+        dest: './docs/', 
+        verbose: true, 
+        display: {
+            access: 'public', 
+            alias: true, 
+            watermark: true, 
+        },
+        groups: {
+            'components':   'Components',
+            'mixins':       'Mixins',
+            'undefined':    'Ungrouped',
+            'utilities':    'Utilities',
+            'variables':    'Variables'
+        },
+        basePath: 'https://github.com/SassDoc/sassdoc',
+    };
+    
+    return gulp.src(`${paths.sass}/**/*.scss`)
+        .pipe(sassdoc(options));
+}
+
+
+
+// ========================================================================
 // LINKS & RESOURCES
 // ========================================================================
 /**
@@ -444,6 +480,7 @@ function statsTask() {
  * Lodash                   https://lodash.com/
  * Minimist                 https://github.com/substack/minimist
  * PostCSS                  http://postcss.org/
+ * SassDoc                  http://sassdoc.com/
  * Stylelint                https://stylelint.io/
  * Stylelint Standard       https://github.com/stylelint/stylelint-config-standard
  * Webpack                  http://webpack.github.io/docs/usage-with-gulp.html

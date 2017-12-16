@@ -2,15 +2,26 @@
 // UTILITIES => FLEX UTILS
 // ========================================================================
 
-/***
-SUMMARY
-=======================
-Classes to apply various flex properties.
-
-USAGE
-=======================
-<div class="display-flex flex-align-end" />
-***/
+/// Stackable classes to apply various flex properties.
+/// 
+/// .flex-align-*: baseline, center, start, end, stretch;
+/// 
+/// .justify-content-*: baseline, center, start, end, evenly, around, 
+/// between, stretch;
+/// 
+/// .flex-wrap-*: wrap, nowrap, wrap-reverse;
+/// 
+/// .flex-direction-*: column, column-reverse, row, row-reverse;
+/// 
+/// @name     Flex
+/// @group    Utilities
+/// 
+/// @since    v1.0.0
+/// @access   public
+/// @author   William Pansky
+/// 
+/// @example
+///   <div class="display-flex flex-align-end" />
 
 
 //_____________________________________

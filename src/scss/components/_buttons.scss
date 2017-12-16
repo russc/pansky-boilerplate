@@ -2,6 +2,22 @@
 // COMPONENTS => BUTTONS
 // ========================================================================
 
+/// `.button` contains the base styles.
+/// Add additional modifier classes as needed.
+/// 
+/// @name     Button
+/// @group    Components
+/// 
+/// @since    v1.0.0
+/// @access   public
+/// @author   William Pansky
+/// 
+/// @example
+///   <a class="button button-primary" href="#" />
+///   <a class="button button-ghost button-large" href="#" />
+/// 
+/// @link     https://getuikit.com/ Button & core props forked via UIkit.
+
 /***
 | TABLE OF CONTENTS
 =======================
@@ -22,20 +38,8 @@
 |  |------------- .button-small
 |
 |– STATE(s):      .active
-
-SUMMARY
-=======================
-`.button` contains the base styles; add additional modifier classes as needed.
-
-USAGE
-=======================
-<a class="button button-primary" href="#" />
-<a class="button button-ghost button-large" href="#" />
-
-FORKS & SOURCES
-=======================
-Button styles and many core code props forked via https://getuikit.com/
 ***/
+
 
 
 // SETTINGS

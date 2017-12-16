@@ -2,42 +2,43 @@
 // ABSTRACTS => DEFINITIONS => COLORS
 // ========================================================================
 
-
-/***
-SUMMARY
-=======================
-This document contains any and all necessary variables and mapping for this
-project's color scheme. Feel free to edit the variables as needed. However,
-please take care when editing the Sass color map(s).
-
-USAGE
-=======================
-.foo {
-  color: color(primary, base);
-}
-
-DOCS
-=======================
-Here's a breakdown of how to access values from inside nested color maps in
-conjunction with our included function at the end of this file:
-
-.foo { color: color(primary, base); }
-  ^      ^      ^      ^      ^
-  1      2      3      4      5
-
-1.  HTML DOM element.
-2.  CSS property selector.
-3.  Sass map selector; this example: color = $colors:( ... );
-4.  Map $key selector; this accesses the "primary" nested map.
-5.  Map $value selector; this accesses the "base" value of our "primary" map.
-
-Another way to think of this function is as follows:
-element { property: $mapName($key, $value); }
-
-FURTHER READING
-=======================
-https://codepen.io/jakealbaugh/post/using-sass-functions-to-access-complex-variable-maps
-***/
+/// This document contains any and all necessary variables and mapping for 
+/// this project's color scheme. Feel free to edit the variables as needed. 
+/// However, please take care when editing the Sass color map(s).
+/// 
+/// Here's a breakdown of how to access values from inside nested color maps 
+/// in conjunction with our included function at the end of this file:
+/// 
+/// ```scss
+/// .foo { color: color(primary, base); }
+///   ^      ^      ^      ^      ^
+///   1      2      3      4      5
+/// 
+/// 1.  HTML DOM element.
+/// 2.  CSS property selector.
+/// 3.  Sass map selector; this example: color = $colors:( ... );
+/// 4.  Map $key selector; this accesses the "primary" nested map.
+/// 5.  Map $value selector; this accesses the "base" value of our "primary" map.
+/// ```
+/// 
+/// Another way to think of this function is as follows: 
+/// ```scss
+///   element { property: $mapName($key, $value); }
+/// ```
+/// 
+/// @name     Colors
+/// @group    Variables
+/// 
+/// @since    v1.0.0
+/// @access   public
+/// @author   William Pansky
+/// 
+/// @example
+///   .foo {
+///     color: color(primary, base);
+///   }
+/// 
+/// @link     https://codepen.io/jakealbaugh/post/using-sass-functions-to-access-complex-variable-maps [Codepen.io] Using Sass functions to access complex variable maps.
 
 
 

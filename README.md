@@ -1,188 +1,160 @@
-# Pansky-Boilerplate
-
+# README.md
 Just a simple boilerplate repo with how I generally organize my project assets.
 
+
 ## Installation
+You can install this package various ways.
 
-If you're a crazy person and, for some odd reason, want to download and tinker then be my guest. You can install with the [Bower package manager](https://bower.io/).
+~~[NPM](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/en/)~~
+<!-- ```cli
+npm install REPO
+yarn install REPO
+``` -->
 
-```
-bower install pansky-boilerplate --save
-```
+~~[Git](https://github.com/)~~
+<!-- ```cli
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+``` -->
 
-## Primary tools
 
-```
-- SCSS
-- Gulp
-  - Babel
-    - Babili
-  - CSSnano
-  - PostCSS
-    - AutoPrefixer
-    - Stylelint
-  - Rename
-  - SASS
-  - SourceMaps
-  - Util
-  - Vinyl FTP
-```
+## # Sass
 
-## SCSS file structure
 
-I compartmentalize my SCSS partial files into the following structure:
+### ## Sass · File architecture
+Sass file architecure built off Hugo Giraaudel's [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern) (_i.e. "7 folders, 1 file"_) by appending an additional `utilities/` directory at the end to house a collection of helper classes to style our content.
 
 ```
-assets/scss/
-|
-|-- base/                 # BASE
-|-- // Global styles such as non-vendor resets, typography, etc.
-|   |-- _!module.scss     ## Core storage file for base @imports.
-|   |-- _resets.scss      ## Personal reset tweaks.
-|   |-- _typography.scss  ## Typography styles.
-|   ...
-|
-|-- components/           # COMPONENTS
-|-- // Resuable module components: buttons, forms, sliders, etc.
-|   |-- _!module.scss     ## Core storage file for component @imports.
-|   |-- _buttons.scss     ## Button styling.
-|   |-- _lists.scss       ## List styles.
-|   ...
-|
-|-- layout/               # LAYOUT
-|-- // Styling for larger layout components: nav, header, footer, etc.
-|   |-- _!module.scss     ## Core storage file for layout @imports.
-|   |-- _header.scss      ## <header>-specific styles.
-|   |-- _grid.scss        ## Project grid specs.
-|   ...
-|
-|-- pages/                # PAGES
-|-- // Page-specific styling, such as homepage, if necessary.
-|   |-- _!module.scss     ## Core storage file for page @imports.
-|   |-- _homepage.scss    ## Homepage-specific page styles.
-|   |-- _contact.scss     ## Contact-specific page styles.
-|   ...
-|
-|-- partials/             # PARTIALS
-|-- // Definitions, settings, mixins, etc.
-|   |-- _!module.scss     ## Core storage file for partial @imports.
-|   |-- _definitions.scss ## SCSS Variables.
-|   |-- _settings.scss    ## Settings file: defines global states.
-|   ...
-|
-|-- themes/               # THEMES
-|-- // Styles for different themes; such as holidays, events, etc.
-|   |-- _!module.scss     ## Core storage file for theme @imports.
-|   ...
-|
-|-- utilities/            # UTILITIES
-|-- // Helper utility styles for adjusting margin, text-transform, etc.
-|   |-- _!module.scss     ## Core storage file for utility @imports.
-|   |-- _animations.scss  ## Animation helpers (delays, etc).
-|   |-- _shadows.scss     ## Shadows (box-shadows, etc).
-|   ...
-|
-|-- vendors/              # VENDORS
-|-- // Third-party vendor styles: normalize, animate, etc.
-|   |-- _animate.scss     ## Custom animate.css file.
-|   |-- _normalize.scss   ## Standard normalize.css file.
-|   ...
-|
--- main.scss              # Primary SCSS file
-|   |-- @import 'partials/!module';
-|   |-- @import 'vendors/!module';
-|   |-- @import 'base/!module';
-|   |-- @import 'utilities/!module';
-|   |-- @import 'components/!module';
-|   |-- @import 'layout/!module';
-|   |-- @import 'pages/!module';
-|   |-- @import 'themes/!module';
+|- abstracts/ ---- Mixins, definitions, functions, selectors, etc.
+|- vendors/ ------ 3rd-party vendor styles (normalize, bootstrap), etc.
+|- base/ --------- Global styles such as non-vendor resets, typography, etc.
+|- layout/ ------- Styling for larger layout modules; e.g. nav, header, etc.
+|- components/ --- Resuable, independant, module components (buttons, etc.)
+|- pages/ -------- Page-specific styling, such as homepage, if necessary.
+|- themes/ ------- Styles for different themes; such as holidays, events, etc.
+|- utilities/ ---- Helper utility styles for adjusting margin, padding, etc.
 ```
 
-## Gulpfile.js & Babel pipeline
+Through consistency, linting, code reviews, and standards we strive to achieve a codebase like this:
 
-I use various Gulp plugins for my stylesheets and Babel (Gulp-Babel) for my scripts. My default ``gulp`` CLI command is as follows:
-
-```js
-// -----------------------------------------
-// ## RUN CMD 'gulp' TO COMPILE SCSS
-gulp.task('default', () => {
-  return gulp.src('assets/scss/main.scss')
-    .pipe(sourcemaps.init()) // init maps
-    .pipe(sass()) // using gulp-sass
-    .pipe(postcss([ // postcss
-      autoprefixer()
-    ]))
-    .pipe(gulpStylelint({
-      reporters: [
-        {
-          formatter: 'verbose', console: true
-        }
-      ]
-    }))
-    .pipe(nano()) // nano that shiz
-    .pipe(rename('app.min.css')) // rename to .min
-    .pipe(sourcemaps.write('.')) // write maps
-    .pipe(gulp.dest('assets/css')) // export destination
-});
+```
+scss/
+|
+|-- abstracts/
+|  |-- _!module.scss ----------- Core file for abstract @import calls
+|  |-- variables/ -------------- Variables directory
+|  |  |-- _colors.scss --------- Color definitions and maps
+|  |  |-- _fonts.scss ---------- Typography definitions and maps
+|  |  |-- ...
+|  |-- mixins/ ----------------- Mixins directory
+|  |  |-- _example.1.scss ------ Mixin example
+|  |  |-- _example.2.scss ------ Mixin example
+|  |  |-- ...
+|
+|-- vendors/
+|  |-- _normalize.scss --------- Standard normalize.css file
+|  ... ------------------------- Etc.
+|
+|-- base/
+|  |-- _!module.scss ----------- Core file for base @import calls
+|  |-- _resets.scss ------------ Specific resets and tweaks
+|  |-- _typography.scss -------- Global typography styles
+|  ... ------------------------- Etc.
+|
+|-- layout/
+|  |-- _!module.scss ----------- Core file for layout @import calls
+|  |-- _header.scss ------------ <header>-specific styles
+|  |-- _grid.scss -------------- Project grid specs
+|  ... ------------------------- Etc.
+|
+|-- components/
+|  |-- _!module.scss ----------- Core file for component @import calls
+|  |-- _buttons.scss ----------- Button settings, styles, modifiers, and states
+|  |-- _dropdowns.scss --------- Dropdown settings, styles, modifiers, and states
+|  |-- _lists.scss ------------- List settings, styles, and modifiers
+|  ... ------------------------- Etc.
+|
+|-- pages/
+|  |-- _!module.scss ----------- Core file for page @import calls
+|  |-- _homepage.scss ---------- Homepage-specific page styles
+|  |-- _contact.scss ----------- Contact-specific page styles
+|  ... ------------------------- Etc.
+|
+|-- themes/
+|  |-- _!module.scss ----------- Core file for theme @import calls
+|  |-- theme-1/ ---------------- Theme-1 directory
+|  |  |-- ... ------------------ Theme-1 files
+|  |-- theme-2/ ---------------- Theme-2 directory
+|  |  |-- ... ------------------ Theme-2 files
+|  ... ------------------------- Etc.
+|
+|-- utilities/
+|  |-- _!module.scss ----------- Core file for utility @import calls
+|  |-- _display.scss ----------- Single display property override classes
+|  |-- _flex.scss -------------- Stackable flex property classes
+|  |-- _no-scroll.scss --------- Prevent <body> scroll during open modals
+|  |-- _svg-fill.scss ---------- Fill SVGs with specific colors
+|  ... ------------------------- Etc.
+|
+-- main.scss
+|  |-- @import 'abstracts/!module';
+|  |-- @import 'vendors/!module';
+|  |-- @import 'base/!module';
+|  |-- @import 'layout/!module';
+|  |-- @import 'components/!module';
+|  |-- @import 'pages/!module';
+|  |-- @import 'themes/!module';
+|  |-- @import 'utilities/!module';
 ```
 
-## Comment structure
 
+### ## Sass · Comments
 In an attempt to write clean and legible SCSS/JS code, the following is my comment structure. Compiled code is minified via Gulp and Babel into **app.min.css** and **app.min.js** files, which strips the comments from the production assets to avoid negatively impacting file size.
 
 Primary comment blocks define new sections (one per section), while secondary blocks can be reused as needed.
 
 ```scss
-// ==============================================================
-//
-// # PRIMARY
-// # This block stands out from the rest and defines a section.
-//
-// ==============================================================
-
-// -----------------------------------------
-// ## PRIMARY - SECONDARY
-// ## This block is serves as a secondary comment; subsections of the primary section.
+// ========================================================================
+// FILE HEADER COMMENT
+// ========================================================================
 ```
 
-## Atom.io snippets
+```scss
 
-CoffeeScript code for [Atom.io](https://atom.io)'s snippets for easier writing; full **snippets.cson** available on my [Gist](https://gist.github.com/williampansky/869225abbb4ee5278ef9c9ea7166d2f1).
+// PRIMARY SECTION HEADER COMMENT
+// ========================================================================
+```
 
-```cson
-###########################################
-###########################################
-###########################################
-#
-# - SCSS
-'.source.scss':
-#
-###########################################
-###########################################
-###########################################
+```scss
 
-## -----------------------------------------
-##  COMMENTS - .scss Comment Styles
-## -----------------------------------------
-  ## COMMENTS - Comment Section Header
-  'Comment Section Header':
-    'prefix': 'com1'
-    'body': """
-      // ==============================================================
-      //
-      // #
-      //
-      // ==============================================================
-    """
+//_____________________________________
+// PRIMARY => SECONDARY SECTION COMMENT
+```
 
-  ## -----------------------------------------
-  ## COMMENTS - Inline (sub)Comment
-  'Comment Inline':
-    'prefix': 'com2'
-    'body': """
 
-      // -----------------------------------------
-      // ##
-    """
+#### ### Sass · Comments · Snippets
+Snippets for easier commenting.
+
+* [Alfred](https://www.alfredapp.com/extras/snippets/)
+* [Atom](http://flight-manual.atom.io/using-atom/sections/snippets/)
+* [VScode](https://code.visualstudio.com/docs/editor/userdefinedsnippets/)
+
+
+## Gulpfile.js
+```js
+gulp.task('default', [ // e.g. CLI command: 'gulp'
+    'sass', 
+    'images', 
+    'deploy', 
+    'docs', 
+    'watch'
+], defaultTask);
+gulp.task('deploy',     deployTask);
+gulp.task('export',     exportTask);
+gulp.task('images',     imageTask);
+gulp.task('reference',  referenceTask);
+gulp.task('sass',       sassTask);
+gulp.task('stats',      statsTask);
+gulp.task('docs',       docsTask);
+gulp.task('test',       testTask);
+gulp.task('watch',      watchTask);
 ```

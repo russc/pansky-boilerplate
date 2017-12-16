@@ -1,11 +1,11 @@
 {
-  "name": "name",
-  "version": "2.0.0",
+  "name": "projectname",
+  "version": "1.0.0",
   "description": "description",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "babel": "babel src -d lib"
+    "test": "echo \"Error: No test specified.\"",
+    "sassdoc": "sassdoc ./src/scss/**/*.scss --verbose"
   },
   "author": "William Pansky",
   "repository": {
@@ -14,10 +14,10 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.34",
-    "@babel/preset-env": "^7.0.0-beta.34",
-    "autoprefixer": "^7.2.2",
-    "babel-cli": "^6.24.1",
+    "@babel/core": "^7.0.0-beta.35",
+    "@babel/preset-env": "^7.0.0-beta.35",
+    "autoprefixer": "^7.2.3",
+    "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.18.13",
     "event-stream": "^3.3.4",
@@ -38,12 +38,13 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-size": "^2.1.0",
-    "gulp-sourcemaps": "^2.6.0",
+    "gulp-sourcemaps": "^2.6.1",
     "gulp-stylelint": "^5.0.0",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "gulp-zip": "^4.0.0",
     "postcss-cssstats": "^1.0.0",
+    "sassdoc": "^2.5.0",
     "stylelint-config-standard": "^18.0.0",
     "webpack": "^3.10.0"
   }

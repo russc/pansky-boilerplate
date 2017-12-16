@@ -2,15 +2,19 @@
 // UTILITIES => DISPLAY HELPERS
 // ========================================================================
 
-/***
-SUMMARY
-=======================
-Classes to apply display properties.
-
-USAGE
-=======================
-<div class="display-flex" />
-***/
+/// Classes to apply a single display property override (!important):
+/// block, inline-block, flex, initial, inherit, or none.
+/// 
+/// @name     Display
+/// @group    Utilities
+/// 
+/// @since    v1.0.0
+/// @since    v1.0.1 Added `!important` to each class.
+/// @access   public
+/// @author   William Pansky
+/// 
+/// @example
+///   <div class="display-flex" />
 
 // Throw our desired outputs into an array
 $displays:

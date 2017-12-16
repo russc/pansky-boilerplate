@@ -2,15 +2,17 @@
 // UTILITIES => SVG FILL
 // ========================================================================
 
-/***
-SUMMARY
-=======================
-Fill an SVG with a particular color via this utility class.
-
-USAGE
-=======================
-<div class="display-flex" />
-***/
+/// Fill an SVG with a particular color via this utility class.
+/// 
+/// @name     SVG Fill
+/// @group    Utilities
+/// 
+/// @since    v1.0.0
+/// @access   public
+/// @author   William Pansky
+/// 
+/// @example
+///   <svg class="svg-fill-secondary" />
 
 // Throw our desired outputs into an array
 $svgFills:
