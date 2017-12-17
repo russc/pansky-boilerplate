@@ -435,6 +435,7 @@ function docsTask() {
         groups: {
             'components':   'Components',
             'mixins':       'Mixins',
+            'settings':     'Settings',
             'undefined':    'Ungrouped',
             'utilities':    'Utilities',
             'variables':    'Variables'

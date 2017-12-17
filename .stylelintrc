@@ -1,6 +1,7 @@
 {
     "ignoreFiles": [
         "**/*.css",
+        "node_modules/**/*.scss",
         "src/scss/vendors/**/*.scss",
         "templates/main/css/scss/libs/*.scss",
         "templates/main/lib/sabre/scss/*.scss",

@@ -4,14 +4,12 @@
 
 /// Stackable classes to apply various flex properties.
 /// 
-/// .flex-align-*: baseline, center, start, end, stretch;
-/// 
-/// .justify-content-*: baseline, center, start, end, evenly, around, 
-/// between, stretch;
-/// 
-/// .flex-wrap-*: wrap, nowrap, wrap-reverse;
-/// 
-/// .flex-direction-*: column, column-reverse, row, row-reverse;
+/// ```css
+/// .flex-align-*:        baseline, center, start, end, stretch;
+/// .justify-content-*:   baseline, center, start, end, evenly, around, between, stretch;
+/// .flex-wrap-*:         wrap, nowrap, wrap-reverse;
+/// .flex-direction-*:    column, column-reverse, row, row-reverse;
+/// ```
 /// 
 /// @name     Flex
 /// @group    Utilities

@@ -2,8 +2,11 @@
 // UTILITIES => DISPLAY HELPERS
 // ========================================================================
 
-/// Classes to apply a single display property override (!important):
-/// block, inline-block, flex, initial, inherit, or none.
+/// Classes to apply a single display property override (!important).
+/// 
+/// ```css
+/// .display-*:   block, inline-block, flex, initial, inherit, none
+/// ```
 /// 
 /// @name     Display
 /// @group    Utilities
