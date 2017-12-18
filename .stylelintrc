@@ -265,10 +265,10 @@
         "no-unknown-animations": true,
 
 
-        # There must never be a leading zero for fractional numbers less than 1.
-        # e.g: a { transform: translate(2px, .4px); }
+        # There must always be a leading zero for fractional numbers less than 1.
+        # e.g: a { transform: translate(2px, 0.4px); }
         # -------------------------------------
-        "number-leading-zero": "never",
+        "number-leading-zero": "always",
 
 
         # Disallow trailing zeros in numbers; e.g: a { top: 1px } (not 1.0px)

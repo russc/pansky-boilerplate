@@ -37,13 +37,13 @@ $transition-ease-slower:                900ms ease-in-out;
 // SHADOWS
 // ========================================================================
 // Material Design Box Shadows: https://codepen.io/sdthornton/pen/wBZdXq
-$shadow-material-depth-1:               0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
-$shadow-material-depth-2:               0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
-$shadow-material-depth-3:               0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
-$shadow-material-depth-4:               0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
-$shadow-material-depth-5:               0 19px 38px rgba(0, 0, 0, .3), 0 15px 12px rgba(0, 0, 0, .22);
-$shadow-material-depth-6:               0 23px 38px rgba(0, 0, 0, .3), 0 19px 12px rgba(0, 0, 0, .22);
-$shadow-material-transition:            all .3s cubic-bezier(.25, .8, .25, 1);
+$shadow-material-depth-1:               0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+$shadow-material-depth-2:               0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+$shadow-material-depth-3:               0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+$shadow-material-depth-4:               0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+$shadow-material-depth-5:               0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+$shadow-material-depth-6:               0 23px 38px rgba(0, 0, 0, 0.3), 0 19px 12px rgba(0, 0, 0, 0.22);
+$shadow-material-transition:            all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
 
 
@@ -74,13 +74,13 @@ $type-headings-h1-size:                 4.25rem;
 $type-headings-h2-size:                 2.625rem;
 $type-headings-h3-size:                 1.625rem;
 $type-headings-h4-size:                 1rem;
-$type-headings-h5-size:                 .825rem;
-$type-headings-h6-size:                 .625rem;
+$type-headings-h5-size:                 0.825rem;
+$type-headings-h6-size:                 0.625rem;
 
 // -----------------------------------------
 // TYPOGRAPHY => HEADINGS => LINE HEIGHTS
-$type-headings-h1-line-height:          .75;
-$type-headings-h2-line-height:          .875;
+$type-headings-h1-line-height:          0.75;
+$type-headings-h2-line-height:          0.875;
 $type-headings-h3-line-height:          1;
 $type-headings-h4-line-height:          1;
 $type-headings-h5-line-height:          1;
@@ -99,7 +99,7 @@ $type-text-lead-text-transform:         none;
 // NAVBAR => GLOBALS
 $navbar-logo-max-width:                 100px;
 $navbar-border-color:                   color(gray, base);
-$navbar-wrapper-box-shadow:             0 2px 3px rgba(0, 0, 0, .02), 0 2px 2px rgba(0, 0, 0, .14);
+$navbar-wrapper-box-shadow:             0 2px 3px rgba(0, 0, 0, 0.02), 0 2px 2px rgba(0, 0, 0, 0.14);
 $navbar-wrapper-padding:                0;
 $navbar-wrapper-inner-padding:          10px;
 $navbar-wrapper-margin:                 0 auto;

@@ -203,7 +203,6 @@ imageTask.flags = {
 
 
 
-// ========================================================================
 // TASKS => DEFAULT
 // ========================================================================
 function defaultTask() {
@@ -242,7 +241,7 @@ function referenceTask() {
 // ========================================================================
 function sassTask() {
     // postCSS plugin calls
-    var plugins = [
+    let plugins = [
         autoprefixer({ browsers: support }),
         cssnano({
             preset: ['default', {
@@ -424,8 +423,9 @@ function docsTask() {
     // display cli log msg
     console.log(color('✅  ', 'WHITE') + color('docsTask()', 'GREEN'));
     
-    var options = {
-        dest: './docs/', 
+    let docs = './docs/assets/docs';
+    let options = {
+        dest: './docs/dist/', 
         verbose: true, 
         display: {
             access: 'public', 
@@ -440,7 +440,19 @@ function docsTask() {
             'utilities':    'Utilities',
             'variables':    'Variables'
         },
-        basePath: 'https://github.com/SassDoc/sassdoc',
+        theme: './docs/theme', 
+        herman: {
+            customCSS: '',
+            extraDocs: [
+                { name: 'Installation',         path: `${docs}/install.md` }, 
+                { name: 'Sass',                 path: `${docs}/sass.md` }, 
+                { name: 'Comment style',        path: `${docs}/comments.md` }, 
+                { name: 'Development pipeline', path: `${docs}/development.md` }, 
+                { name: 'License',              path: './LICENSE.md' }, 
+            ],
+            displayColors: 'hex'
+        },
+        basePath: 'https://github.com/williampansky/pansky-boilerplate/tree/master/src/scss',
     };
     
     return gulp.src(`${paths.sass}/**/*.scss`)

@@ -1,95 +1,242 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Projectname - v1.0.0</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Projectname - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>description</p>
-"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">Projectname - 1.0.0</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="components"><a href="#components">Components</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="components-css"><a href="#components-css">csss</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="components" data-name="Button" data-type="css"><a href="#components-css-Button">Button</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="mixins"><a href="#mixins">Mixins</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="mixins-mixin"><a href="#mixins-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="mixins" data-name="Box Shadow" data-type="mixin"><a href="#mixins-mixin-Box Shadow">Box Shadow</a></li><li class="sidebar__item sassdoc__item" data-group="mixins" data-name="Example" data-type="mixin"><a href="#mixins-mixin-Example">Example</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="utilities"><a href="#utilities">Utilities</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="utilities-css"><a href="#utilities-css">csss</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="Display" data-type="css"><a href="#utilities-css-Display">Display</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="Flex" data-type="css"><a href="#utilities-css-Flex">Flex</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="No Scroll" data-type="css"><a href="#utilities-css-No Scroll">No Scroll</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="SVG Fill" data-type="css"><a href="#utilities-css-SVG Fill">SVG Fill</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="variables"><a href="#variables">Variables</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="variables-css"><a href="#variables-css">csss</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="variables" data-name="Colors" data-type="css"><a href="#variables-css-Colors">Colors</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="components"><div class="container">Components</div></h1><section class="main__sub-section" id="components-css"><h2 class="main__heading--secondary"><div class="container">csss</div></h2><section class="main__item container item" id="components-css-Button"><h3 class="item__heading"><a class="item__name" href="#css-Button">Button</a></h3><span class="item__since">Since v1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>Button {
-  box-sizing: border-box;
-  display: inline-block;
-  border: none;                     // Remove default borders from `&lt;button /&gt;` elems.
-  border-radius: $button-border-radius;
-  color: inherit;                   // Correct `color` prop `&lt;button /&gt;` elems.
-  font: inherit;                    // Correct `font` prop `&lt;button /&gt;` elems.
-  font-size: $button-font-size;
-  line-height: $button-line-height; // [*]
-  text-align: center;               // Align text if button has a width.
-  text-decoration: none;            // Required for `&lt;a /&gt;` elems.
-  text-transform: none;             // Remove the inheritance of in Edge, Firefox, and IE.
-  padding: 0;
-  margin: 0;                        // Remove margins in Chrome, Safari, and Opera.
-  overflow: visible;                // Address `overflow: hidden` in IE.
-  vertical-align: middle;
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>docs/</title>
+        <meta name="description" content="Comply, a free Bootstrap 4 multipurpose template." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Bootstrap 4-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/css/animate.min.css" />
+        <!--icons-->
+        <link rel="stylesheet" href="assets/css/ionicons.min.css" />
+        <!--custom-->
+        <link rel="stylesheet" href="assets/css/landing.css" />
+    </head>
+    <body>
+        <!--header-->
+        <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top sticky-navigation">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="ion-grid icon-sm"></span>
+            </button>
+            <a class="navbar-brand hero-heading page-scroll" href="#main">docs/</a>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mr-3">
+                        <a class="nav-link page-scroll" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item mr-3">
+                        <a class="nav-link page-scroll" href="#team">Sources</a>
+                    </li>
+                    <li class="nav-item mr-3">
+                        <a class="nav-link page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-  /***
-  [*] `line-height` is used to create a height because it also centers the 
-      text vertically for `&lt;a class=&quot;button&quot; /&gt;` elements. Better would be to 
-      use height and flexbox to center the text vertically (`vertical-align`) 
-      but Flexbox doesn&#39;t work in Firefox on `button` elements.
-  ***/
+        <!--main section-->
+        <section class="d-md-flex flex-md-row align-items-md-center justify-content-md-center bg-texture hero" id="main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-6 hidden-md-down wow fadeIn">
+                        <img class="img-fluid mx-auto d-block" src="assets/img/sassdoc-preview.jpg"/>
+                    </div>
+                    <div class="col-xl-5 col-lg-6 col-sm-12 text-white wow fadeIn">
+                        <h2 class="pt-4">Compiled <b class="text-dark">source documentation </b> with SassDoc &amp; Herman</h2>
+                        <p class="mt-5">
+                            To help us document our Sass variables, functions, mixins, and placeholders – we utilize <em>SassDoc</em> by Hugo Giraudel and extend its functionality with <em>Herman</em> by Oddbird.
+                        </p>
+                        <p class="mt-5">
+                            <a href="dist/index.html" class="btn btn-white mb-2 page-scroll">View documentation</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  // misc. additional props
-  &amp;:not(:disabled) { cursor: pointer; }
-  &amp;:hover { text-decoration: none; }
-  &amp;:focus { outline: none; }
+        <!--features-->
+        <section class="bg-faded" id="features">
+            <div class="container">
+                <div class="row mb-3">
+                    <div class="col-md-8 col-sm-8 offset-sm-2 col-xs-12 text-center wow fadeIn">
+                        <h2 class="text-primary">Features</h2>
+                        <p class="lead mt-4">
+                            SassDoc parses your source folder to grab documentation-specific comments. From there, it builds a data tree, that gets enhanced and filtered before being passed to the view. So you end up with a fully styled HTML document.
+                        </p>
+                    </div>
+                </div>
+                <div class="row mt-5 text-center">
+                    <div class="col-md-4 wow fadeIn">
+                        <div class="card no-bg no-shadow">
+                            <div class="card-block">
+                                <div class="icon-box">
+                                    <em class="ion-pound icon-md"></em>
+                                </div>
+                                <h6>Source file comments</h6>
+                                <p class="text-secondary">
+                                    Write documentation comments in the same file as your code.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 wow fadeIn" data-wow-delay="200ms">
+                        <div class="card no-bg no-shadow">
+                            <div class="card-block">
+                                <div class="icon-box">
+                                    <em class="ion-load-a icon-md"></em>
+                                </div>
+                                <h6>Gulp integration</h6>
+                                <p class="text-secondary">
+                                    Our <code>docsTask()</code> recompiles documentation automatically.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 wow fadeIn" data-wow-delay="400ms">
+                        <div class="card no-bg no-shadow">
+                            <div class="card-block">
+                                <div class="icon-box">
+                                    <em class="ion-arrow-graph-up-right icon-md"></em>
+                                </div>
+                                <h6>Extended with Herman</h6>
+                                <p class="text-secondary">
+                                    Herman is built as an extension to SassDoc, and supports all their core functionality with additional support.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  // Remove the inner border and padding in Firefox.
-  &amp;::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-  }
-}</code>" data-collapsed="Button { ... }"><code>Button { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p><code>.button</code> contains the base styles. Add additional modifier classes as needed.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>&lt;a class=&quot;button button-primary&quot; href=&quot;#&quot; /&gt;
-&lt;a class=&quot;button button-ghost button-large&quot; href=&quot;#&quot; /&gt;</code></pre></div><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://getuikit.com/">Button &amp; core props forked via UIkit.</a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>William Pansky</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="mixins"><div class="container">Mixins</div></h1><section class="main__sub-section" id="mixins-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="mixins-mixin-Box Shadow"><h3 class="item__heading"><a class="item__name" href="#mixin-Box Shadow">Box Shadow</a></h3><span class="item__since">Since v1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin Box Shadow($depth: 1) { 
-  @if $depth == 1 {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
-  } @else if $depth == 2 {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
-  } @else if $depth == 3 {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
-  } @else if $depth == 4 {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
-  } @else if $depth == 5 {
-    box-shadow: 0 19px 38px rgba(0, 0, 0, .3), 0 15px 12px rgba(0, 0, 0, .22);
-  }
+        <section class="bg-alt p-0" style="display: none;">
+            <div class="container-fluid">
+                <div class="row d-md-flex mt-5">
+                    <div class="col-sm-6 p-0 wow fadeInLeft">
+                        <img class="img-fluid" src="assets/img/product2.jpg" alt="Gallery">
+                    </div>
+                    <div class="col-sm-6 pl-5 pr-5 pt-5 pb-4 wow fadeInRight">
+                        <h3><a href="#">What's New in Version 5.0?</a></h3>
+                        <p class="lead pt-4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                        <ul class="pt-4 pb-3 list-default">
+                            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                            <li>Aenean commodo ligula eget dolor.</li>
+                            <li>Aenean massa.</li>
+                            <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
+                            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                            <li>Aenean commodo ligula eget dolor.</li>
+                            <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
+                        </ul>
+                        <a href="#purchase" class="btn btn-primary mr-2 page-scroll">Get Started with Comply</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  // transition included for &amp;:hover, &amp;:focus effects
-  transition: all .3s cubic-bezier(.25, .8, .25, 1);
- }" data-collapsed="@mixin Box Shadow($depth: 1) { ... }"><code>@mixin Box Shadow($depth: 1) { ... }</code></pre><a href="https://github.com/SassDoc/sassdoc/abstracts/mixins/_box-shadows.scss#L29-L44" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Mixin to <code>@include</code> Material Design box-shadows to your components to simulate depth and elevation; depths 1 - 5.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$depth</code></th><td data-label="desc"><p>Determines the depth, or elevation, of your component&#39;s box-shadow</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>1</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.card {
-  @include materialShadow(1);
-  &amp;:hover, &amp;:focus {
-    @include materialShadow(4);
-  }
-}</code></pre></div><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://material.io/guidelines/material-design/elevation-shadows.html">Material.io | Elevation &amp; shadows</a></li><li><a href="https://codepen.io/sdthornton/pen/wBZdXq">Codepen.io | Material design box shadows via Samuel Thornton</a></li><li><a href="https://getuikit.com/">Soft shadows forked via UIkit</a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p><a href="mailto:william.pansky@sabre.com">William Pansky</a></p></li></ul></section><section class="main__item container item" id="mixins-mixin-Example"><h3 class="item__heading"><a class="item__name" href="#mixin-Example">Example</a></h3><span class="item__since">Since v1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin Example() { 
-  display: block;
- }" data-collapsed="@mixin Example() { ... }"><code>@mixin Example() { ... }</code></pre><a href="https://github.com/SassDoc/sassdoc/abstracts/mixins/_example.scss#L23-L25" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This mixin is an example to showcase proper commenting. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed nulla at tellus bibendum tempus. Vivamus convallis ante ut viverra viverra. Duis varius pretium erat.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.foo {
-  @include example(bar);
-}</code></pre></div><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://getuikit.com/">Button &amp; core props forked via UIkit.</a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>William Pansky</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="utilities"><div class="container">Utilities</div></h1><section class="main__sub-section" id="utilities-css"><h2 class="main__heading--secondary"><div class="container">csss</div></h2><section class="main__item container item" id="utilities-css-Display"><h3 class="item__heading"><a class="item__name" href="#css-Display">Display</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>Display {
-  .display-#{$key} { display: $value !important; }
-}</code>" data-collapsed="Display { ... }"><code>Display { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Classes to apply a single display property override (!important).</p><pre><code class="lang-css">.display-*:   block, inline-block, flex, initial, inherit, none
-</code></pre></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>&lt;div class=&quot;display-flex&quot; /&gt;</code></pre></div><h3 class="item__sub-heading">Changelog</h3><ul class="list-unstyled"><li>v1.0.0</li><li>v1.0.1 &mdash;<p>Added <code>!important</code> to each class.</p></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>William Pansky</p></li></ul></section><section class="main__item container item" id="utilities-css-Flex"><h3 class="item__heading"><a class="item__name" href="#css-Flex">Flex</a></h3><span class="item__since">Since v1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>Flex {
-  .flex-align-#{$align-items} { align-items: $item; }
-}</code>" data-collapsed="Flex { ... }"><code>Flex { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Stackable classes to apply various flex properties.</p><pre><code class="lang-css">.flex-align-*:        baseline, center, start, end, stretch;
-.justify-content-*:   baseline, center, start, end, evenly, around, between, stretch;
-.flex-wrap-*:         wrap, nowrap, wrap-reverse;
-.flex-direction-*:    column, column-reverse, row, row-reverse;
-</code></pre></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>&lt;div class=&quot;display-flex flex-align-end&quot; /&gt;</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>William Pansky</p></li></ul></section><section class="main__item container item" id="utilities-css-No Scroll"><h3 class="item__heading"><a class="item__name" href="#css-No Scroll">No Scroll</a></h3><span class="item__since">Since v1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>No Scroll {
-  height: 100vh;
-  max-height: 100vh;
-  overflow: hidden;
-}</code>" data-collapsed="No Scroll { ... }"><code>No Scroll { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This class is placed on the <code>&lt;body&gt;</code> when opening fullscreen menus and modals to prevent the document from scrolling while scrolling inside said menus or modals.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>document.body.classList.toggle(&#39;no-scroll&#39;);</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>William Pansky</p></li></ul></section><section class="main__item container item" id="utilities-css-SVG Fill"><h3 class="item__heading"><a class="item__name" href="#css-SVG Fill">SVG Fill</a></h3><span class="item__since">Since v1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>SVG Fill {
-  .svg-fill-#{$key} { fill: $value !important; }
-}</code>" data-collapsed="SVG Fill { ... }"><code>SVG Fill { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Fill an SVG with a particular color via this utility class.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>&lt;svg class=&quot;svg-fill-secondary&quot; /&gt;</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>William Pansky</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="variables"><div class="container">Variables</div></h1><section class="main__sub-section" id="variables-css"><h2 class="main__heading--secondary"><div class="container">csss</div></h2><section class="main__item container item" id="variables-css-Colors"><h3 class="item__heading"><a class="item__name" href="#css-Colors">Colors</a></h3><span class="item__since">Since v1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>Colors {
-  // color variant is optional
-  @if ($color-variant != null) {
-    @return map-get(map-get($colors, $color-name), $color-variant);
-  } @else {
-    @return map-get($colors, $color-name);
-  }
-}</code>" data-collapsed="Colors { ... }"><code>Colors { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This document contains any and all necessary variables and mapping for this project&#39;s color scheme. Feel free to edit the variables as needed. However, please take care when editing the Sass color map(s).</p><p>Here&#39;s a breakdown of how to access values from inside nested color maps in conjunction with our included function at the end of this file:</p><pre><code class="lang-scss">.foo { color: color(primary, base); }
-  ^      ^      ^      ^      ^
-  1      2      3      4      5
+        <!--sources-->
+        <section class="bg-alt" id="team">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-12 text-center wow FadeIn">
+                        <h2 class="text-primary">Sources</h2>
+                        <p class="lead pt-3">
+                            Many thanks for making great open-source apps.
+                        </p>
+                    </div>
+                </div>
+                <div class="row d-md-flex mt-5 text-center">
+                    <div class="team col-sm-4 mt-2 wow fadeIn">
+                        <a href="https://sass-guidelin.es/" target="_blank">
+                            <img src="assets/img/team-1.jpg" alt="Sass Guidelines" class="img-team img-fluid rounded-circle" />
+                            <div class="wow fadeInUp">
+                                <h5>Sass Guidelines</h5>
+                                <p class="mb-0">
+                                    An opinionated styleguide for writing sane, maintainable and scalable Sass.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="team col-sm-4 mt-2 wow fadeIn" data-wow-delay="300ms">
+                        <a href="http://sassdoc.com/" target="_blank">
+                            <img src="assets/img/team-2.jpg" alt="SassDoc" class="img-team img-fluid rounded-circle" />
+                            <div class="wow fadeInUp" data-wow-delay="300ms">
+                                <h5>SassDoc</h5>
+                                <p class="mb-0">
+                                    A documentation system to build pretty and powerful docs in the blink of an eye.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="team col-sm-4 mt-2 wow fadeIn" data-wow-delay="600ms">
+                        <a href="http://oddbird.net/herman/" target="_blank">
+                            <img src="assets/img/team-3.jpg" alt="Herman by Oddbird.net" class="img-team img-fluid rounded-circle" />
+                            <div class="wow fadeInUp" data-wow-delay="600ms">
+                                <h5>Herman</h5>
+                                <p class="mb-0">
+                                    An extension to SassDoc which supports all their core functionality with additional support.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-1.  HTML DOM element.
-2.  CSS property selector.
-3.  Sass map selector; this example: color = $colors:( ... );
-4.  Map $key selector; this accesses the &quot;primary&quot; nested map.
-5.  Map $value selector; this accesses the &quot;base&quot; value of our &quot;primary&quot; map.
-</code></pre><p>Another way to think of this function is as follows:</p><pre><code class="lang-scss">  element { property: $mapName($key, $value); }
-</code></pre></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.foo {
-  color: color(primary, base);
-}</code></pre></div><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://codepen.io/jakealbaugh/post/using-sass-functions-to-access-complex-variable-maps">[Codepen.io] Using Sass functions to access complex variable maps.</a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>William Pansky</p></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <span class="project-info__name">Projectname</span><!-- Version --> <span class="project-info__version">- v1.0.0</span><!-- License --> <span class="project-info__license">, under MIT</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>
+        <!--contact-->
+        <section class="bg-texture-collage p-0" id="contact">
+            <div class="container">
+                <div class="row d-md-flex text-white text-center wow fadeIn">
+                    <div class="col-sm-4 p-5 d-flex flex-column justify-content-center wow fadeIn">
+                        <a href="https://shs-dx.slack.com/team/U6DL1263E" target="_blank">
+                            <p><img class="fa fa-slack icon-md" src="https://cdn0.iconfinder.com/data/icons/continuous-line-media-1/128/Slack-512.png" /></p>
+                            <p class="mb-0">@williampansky</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-4 p-5 d-flex flex-column justify-content-center wow fadeIn" data-wow-delay="300ms">
+                        <a href="mailto:william.pansky@sabre.com?subject=SassDocs">
+                            <p><em class="ion-ios-email-outline icon-md"></em></p>
+                            <p class="mb-0">william.pansky@sabre.com</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-4 p-5 d-flex flex-column justify-content-center wow fadeIn" data-wow-delay="600ms">
+                        <a href="https://goo.gl/maps/fmKCHiJ2j9m" target="_blank">
+                            <p><em class="ion-ios-location-outline icon-md"></em></p>
+                            <p class="mb-0">Dallas, Texas</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--footer-->
+        <section class="bg-footer" id="connect">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-12 text-center wow fadeIn">
+                        <h1 class="text-white">docs/</h1>
+                        <p class="mt-4" style="display: none;">
+                            <a href="https://twitter.com/" target="_blank"><em class="ion-social-twitter text-twitter-alt icon-sm mr-3"></em></a>
+                            <a href="https://facebook.com/" target="_blank"><em class="ion-social-github text-facebook-alt icon-sm mr-3"></em></a>
+                            <a href="https://www.linkedin.com/" target="_blank"><em class="ion-social-linkedin text-linkedin-alt icon-sm mr-3"></em></a>
+                            <a href="https://plus.google.com/" target="_blank"><em class="ion-social-googleplus text-google-alt icon-sm mr-3"></em></a>
+                        </p>
+                        <p class="pt-2 text-muted">
+                            &copy; 2018 <a href="https://sabrehospitality.com" target=_"blank">Sabre Hospitality Solutions</a>. Developed by <a href="https://shs-dx.slack.com/team/U6DL1263E" target="_blank">@williampansky</a>
+                        </p>
+                        <p class="pt-2 text-muted">
+                            &copy; 2017 Comply. A Bootstrap 4 multipurpose theme by <a href="https://wireddots.com" target=_"blank">Wired Dots</a>. Developed by <a href="https://twitter.com/attacomsian" target=_"blank">@attacomsian</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="assets/js/jquery-3.2.1.min.js"></script>
+        <script src="assets/js/tether.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.easing.min.js"></script>
+        <script src="assets/js/wow.js"></script>
+        <script src="assets/js/landing.js"></script>
+    </body>
+</html>

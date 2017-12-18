@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <title>Development pipeline | sass-seed Documentation</title>
+
+  <link href="assets/img/favicon.ico" rel="shortcut icon">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/webpack/app_styles.min.css" />
+  <link rel="stylesheet" href="../assets/css/uikit.min.css" />
+
+  
+
+  
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" hidden>
+  <symbol id="icon-logo" viewBox="0 0 16 16">
+    <path d="M.2 8L0 7.8v-.2C.8 6.9 1.9 5.9 2.7 5l.4.3c-.5.8-1.1 1.6-1.8 2.3 1 1.2 1 1.3 1.7 2.4l-.4.3c-.4-.4-.5-.6-1-1C1 8.6 1.1 8.7.2 8zM13 10c.6-1.1.7-1.1 1.7-2.4-.6-.6-1.3-1.5-1.7-2.3l.3-.3c.8.8 1.8 1.8 2.7 2.6v.2l-.8.7c-.3.3-1.2 1.1-1.8 1.7L13 10z"/><path d="M2.6 13.1H3c.9 0 1.1-.2 1.1-1.4V4.2c0-1.1-.2-1.4-1.1-1.4h-.4v-.6h4.5v.7h-.3c-.9 0-1.1.2-1.1 1.4v3.2h4.6V4.2c0-1.1-.2-1.4-1.1-1.4h-.3v-.6h4.5v.7H13c-.9 0-1.1.2-1.1 1.4v7.5c0 1.1.2 1.4 1.1 1.4h.4v.7H8.9v-.7h.3c.9 0 1.1-.2 1.1-1.4V8.2H5.7v3.5c0 1.1.2 1.4 1.1 1.4h.3v.7H2.6v-.7z"/>
+  </symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 28">
+    <path d="M24 21v2c0 .547-.453 1-1 1H1c-.547 0-1-.453-1-1v-2c0-.547.453-1 1-1h22c.547 0 1 .453 1 1zm0-8v2c0 .547-.453 1-1 1H1c-.547 0-1-.453-1-1v-2c0-.547.453-1 1-1h22c.547 0 1 .453 1 1zm0-8v2c0 .547-.453 1-1 1H1c-.547 0-1-.453-1-1V5c0-.547.453-1 1-1h22c.547 0 1 .453 1 1z"/>
+  </symbol>
+</svg>
+
+  <div data-sassdoc-region="app">
+    <header data-sassdoc-region="banner">
+      
+  <button data-nav-toggle data-toggle="button" aria-controls="nav" aria-pressed="false" type="button" data-toggle-synced="false">
+    
+  <svg data-icon="menu" data-icon-size="icon-small" ><title>menu</title><use xlink:href="#icon-menu" />
+  </svg>
+
+  </button>
+
+
+      <div data-sassdoc="project-title">
+        <a href="index.html" rel="home" data-sassdoc="project-name">sass-seed</a>
+        
+          <span data-sassdoc="project-version">1.0.0</span>
+        
+      </div>
+    </header>
+
+    <div data-sassdoc-region="container">
+      
+    <nav data-nav-menu data-toggle="target" id="nav" data-target-id="nav" aria-expanded="false" data-auto-closing="false" data-auto-closing-on-any-click="false">
+        <form action="search.html">
+            <input type="text" name="q" placeholder="Search…" required minlength="3">
+        </form>
+
+        <div data-sassdoc="nav-subsection">
+            <h3 data-sassdoc="nav-title">
+                
+                <a href="index.html" data-sassdoc-nav="is-not-active">sass-seed</a>
+            </h3>
+            
+            
+                <ul>
+                    
+                        
+                        <li data-sassdoc="nav-item">
+                            <a href="install.html" data-sassdoc-nav="is-not-active">Installation</a>
+                        </li>
+                    
+                        
+                        <li data-sassdoc="nav-item">
+                            <a href="sass.html" data-sassdoc-nav="is-not-active">Sass</a>
+                        </li>
+                    
+                        
+                        <li data-sassdoc="nav-item">
+                            <a href="comments.html" data-sassdoc-nav="is-not-active">Comment style</a>
+                        </li>
+                    
+                        
+                        <li data-sassdoc="nav-item">
+                            <a href="development.html" data-sassdoc-nav="is-active">Development pipeline</a>
+                        </li>
+                    
+                        
+                        <li data-sassdoc="nav-item">
+                            <a href="LICENSE.html" data-sassdoc-nav="is-not-active">License</a>
+                        </li>
+                    
+                </ul>
+            
+        </div>
+
+        
+        <div data-sassdoc="nav-subsection">
+            <ul>
+                
+                    
+                        <li data-sassdoc="nav-item">
+                            <a href="components.html" data-sassdoc-nav="is-not-active">Components</a>
+                        </li>
+                    
+                    
+                        <li data-sassdoc="nav-item">
+                            <a href="mixins.html" data-sassdoc-nav="is-not-active">Mixins</a>
+                        </li>
+                    
+                    
+                        <li data-sassdoc="nav-item">
+                            <a href="settings.html" data-sassdoc-nav="is-not-active">Settings</a>
+                        </li>
+                    
+                    
+                        <li data-sassdoc="nav-item">
+                            <a href="utilities.html" data-sassdoc-nav="is-not-active">Utilities</a>
+                        </li>
+                    
+                    
+                        <li data-sassdoc="nav-item">
+                            <a href="variables.html" data-sassdoc-nav="is-not-active">Variables</a>
+                        </li>
+                    
+            </ul>
+        </div>
+
+        
+        
+
+        
+            <aside class="footer-credit">
+                
+                <span>Documented with <a href="http://sassdoc.com/" target="_blank" class="footer-link">SassDoc</a> &amp; <a href="http://oddbird.net/herman/" target="_blank" class="footer-link">Herman</a>.</span>
+            </aside>
+        
+    </nav>
+
+
+      <main data-sassdoc-region="main">
+        
+  <nav data-sassdoc-region="breadcrumb">
+    
+    <a href="index.html" >sass-seed</a> »
+    <strong>Development pipeline</strong>
+  </nav>
+
+
+        <div data-sassdoc-page="development">
+          
+  <div class="text-block">
+    <h1 id="development-pipeline">Development pipeline</h1>
+<h3 id="gulpfile-js">Gulpfile.js</h3>
+<blockquote>
+<p><em>“Gulp is a toolkit for automating painful or time-consuming tasks in your development workflow, so you can stop messing around and build something.”</em>
+— <a href="https://gulpjs.com/">gulpjs.com</a></p>
+</blockquote>
+<p>Our <code>gulpfile.js</code> files generally run a collection of the following tasks. See the <a href="http://wiki.esitelabs.com:1081/index.php/Gulp_Workflow">SHS Wiki</a> for more<span class="widont">&nbsp;</span>information.</p>
+<pre><code class="lang-js">// TASKS LIST
+// ========================================================================
+// TASKS =&gt; DEFAULT
+gulp.task('default', [ // e.g. CLI command: 'gulp'
+    'sass', 
+    'images', 
+    'deploy', 
+    'docs', 
+    'watch'
+], defaultTask);
+defaultTask.description = 'Runs all tasks.';
+
+//_____________________________________
+// TASKS =&gt; DEPLOY
+gulp.task('deploy', deployTask);
+deployTask.description = 'Bundles all JS/HTML assets into entry point *.min.js bundles.';
+
+//_____________________________________
+// TASKS =&gt; EXPORT
+gulp.task('export', exportTask);
+exportTask.description = 'ZIPs all files relevant for security testing (excludes conf and vendor).';
+
+//_____________________________________
+// TASKS =&gt; IMAGES
+gulp.task('images', imageTask);
+imageTask.description = `Optimizes images in ${paths.img}`;
+
+// TASKS =&gt; Images task flags
+imageTask.flags = {
+    default: ' 🏁  Compress images.',
+    '--dev': ' 🏁  Skips image compression.',
+};
+
+//_____________________________________
+// TASKS =&gt; REFERENCE
+gulp.task('reference',  referenceTask);
+referenceTask.description  = '-';
+
+//_____________________________________
+// TASKS =&gt; SASS
+gulp.task('sass', sassTask);
+sassTask.description = `Run Stylelint and PostCSS, compile Sass, then save to ${paths.sass}`;
+
+// TASKS =&gt; Sass task flags
+sassTask.flags = {
+    default: ' 🏁  Output style is compressed and minified.',
+    '--dev': ' 🏁  Output style is expanded and uses sourcemaps.',
+};
+
+//_____________________________________
+// TASKS =&gt; STATS
+gulp.task('stats', statsTask);
+statsTask.description = 'Analyzes CSS and returns a comprehensive report object.';
+
+//_____________________________________
+// TASKS =&gt; DOCS
+gulp.task('docs', docsTask);
+docsTask.description = 'Parse SCSS and compile SassDoc comments to docs/ dir.';
+
+//_____________________________________
+// TASKS =&gt; TEST
+gulp.task('test', testTask);
+testTask.description = '-';
+
+//_____________________________________
+// TASKS =&gt; WATCH
+gulp.task('watch', watchTask);
+watchTask.description = 'Watches files for changes, compiles on file saves, and reloads BrowserSync if necessary.';
+</code></pre>
+<h3 id="webpack">Webpack</h3>
+<blockquote>
+<p><em>“At its core, webpack is a static module bundler for modern JavaScript applications. When webpack processes your application, it recursively builds a dependency graph that includes every module your application needs, then packages all of those modules into one or more bundles.”</em>
+— <a href="https://webpack.js.org/">webpack.js.org</a></p>
+</blockquote>
+<p><strong><em>!TODO:</em></strong> Additional Webpack information is needed<span class="widont">&nbsp;</span>here.</p>
+<h3 id="sassdoc">SassDoc</h3>
+<p>To help us document our Sass variables, functions, mixins, and placeholders, we utilize another nifty utility written by Hugo Giraudel called<span class="widont">&nbsp;</span>SassDoc.</p>
+<blockquote>
+<p><em>“SassDoc parses your source folder to grab documentation-specific comments. From there, it builds a data tree, that gets enhanced and filtered before being passed to the view.”</em>
+— <a href="http://sassdoc.com/">sassdoc.com</a></p>
+</blockquote>
+<p><img src="../assets/img/sassdoc-preview.jpg" alt="SassDoc screenshot"></p>
+<p>Here is an example of a mixin extensively documented with<span class="widont">&nbsp;</span>SassDoc:</p>
+<pre><code class="lang-scss">/// Mixin helping defining both `width` and `height` simultaneously.
+///
+/// @author Hugo Giraudel
+///
+/// @access public
+///
+/// @param {Length} $width - Element’s `width`
+/// @param {Length} $height [$width] - Element’s `height`
+///
+/// @example scss - Usage
+///   .foo {
+///     @include size(10em);
+///   }
+///
+///   .bar {
+///     @include size(100%, 10em);
+///   }
+///
+/// @example css - CSS output
+///   .foo {
+///     width: 10em;
+///     height: 10em;
+///   }
+///
+///   .bar {
+///     width: 100%;
+///     height: 10em;
+///   }
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+</code></pre>
+
+  </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/js/uikit.min.js"></script>
+  <script src="../assets/js/uikit-icons.min.js"></script>
+  <script type="text/javascript" src="assets/webpack/vendor.min.js"></script>
+  <script type="text/javascript" src="assets/webpack/app.min.js"></script>
+  
+</body>
+</html>

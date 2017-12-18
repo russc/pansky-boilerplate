@@ -12,7 +12,7 @@
 /// @access   public
 /// @author   William Pansky
 /// 
-/// @example
+/// @example html
 ///   <a class="button button-primary" href="#" />
 ///   <a class="button button-ghost button-large" href="#" />
 /// 
@@ -95,7 +95,7 @@ $button-large-line-height:          1.625;
 $button-large-padding-horizontal:   1.5rem;
 
 // -- small
-$button-small-font-size:            .875rem;
+$button-small-font-size:            0.875rem;
 $button-small-line-height:          1.15;
 $button-small-padding-horizontal:   1rem;
 
@@ -106,14 +106,14 @@ $button-small-padding-horizontal:   1rem;
 .button {
   box-sizing: border-box;
   display: inline-block;
-  border: none;                     // Remove default borders from `<button />` elems.
+  border: none;                     // Remove default borders from `button` elems.
   border-radius: $button-border-radius;
-  color: inherit;                   // Correct `color` prop `<button />` elems.
-  font: inherit;                    // Correct `font` prop `<button />` elems.
+  color: inherit;                   // Correct `color` prop `button` elems.
+  font: inherit;                    // Correct `font` prop `button` elems.
   font-size: $button-font-size;
   line-height: $button-line-height; // [*]
   text-align: center;               // Align text if button has a width.
-  text-decoration: none;            // Required for `<a />` elems.
+  text-decoration: none;            // Required for `a` elems.
   text-transform: none;             // Remove the inheritance of in Edge, Firefox, and IE.
   padding: 0;
   margin: 0;                        // Remove margins in Chrome, Safari, and Opera.
@@ -122,9 +122,9 @@ $button-small-padding-horizontal:   1rem;
 
   /***
   [*] `line-height` is used to create a height because it also centers the 
-      text vertically for `<a class="button" />` elements. Better would be to 
+      text vertically for `a class="button"` elements. Better would be to 
       use height and flexbox to center the text vertically (`vertical-align`) 
-      but Flexbox doesn't work in Firefox on `button` elements.
+      but Flexbox doesn't work in Firefox on button elements.
   ***/
 
   // misc. additional props

@@ -1,0 +1,226 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "sassdoc-theme-herman",
+        "scope": null,
+        "escapedName": "sassdoc-theme-herman",
+        "name": "sassdoc-theme-herman",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/williampansky/Sites/pansky-boilerplate"
+    ]
+  ],
+  "_from": "sassdoc-theme-herman@latest",
+  "_id": "sassdoc-theme-herman@1.0.0",
+  "_inCache": true,
+  "_location": "/sassdoc-theme-herman",
+  "_nodeVersion": "8.9.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/sassdoc-theme-herman-1.0.0.tgz_1513369410818_0.8687247855123132"
+  },
+  "_npmUser": {
+    "name": "jgerigmeyer",
+    "email": "jonny@oddbird.net"
+  },
+  "_npmVersion": "5.5.1",
+  "_phantomChildren": {
+    "clone-buffer": "1.0.0",
+    "cloneable-readable": "1.0.0",
+    "extend": "3.0.1",
+    "extend-shallow": "2.0.1",
+    "flush-write-stream": "1.0.2",
+    "fs-mkdirp-stream": "1.0.0",
+    "glob": "7.1.2",
+    "graceful-fs": "4.1.11",
+    "is-absolute": "0.2.6",
+    "is-negated-glob": "1.0.0",
+    "json-stable-stringify": "1.0.1",
+    "lazystream": "1.0.0",
+    "lead": "1.0.0",
+    "object.assign": "4.0.4",
+    "path-dirname": "1.0.2",
+    "pumpify": "1.3.5",
+    "readable-stream": "2.3.3",
+    "remove-bom-buffer": "3.0.0",
+    "remove-bom-stream": "1.2.0",
+    "remove-trailing-separator": "1.1.0",
+    "resolve-options": "1.1.0",
+    "through2": "2.0.3",
+    "through2-filter": "2.0.0",
+    "to-through": "2.0.0",
+    "value-or-function": "3.0.0",
+    "vinyl-sourcemap": "1.1.0"
+  },
+  "_requested": {
+    "raw": "sassdoc-theme-herman",
+    "scope": null,
+    "escapedName": "sassdoc-theme-herman",
+    "name": "sassdoc-theme-herman",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/sassdoc-theme-herman/-/sassdoc-theme-herman-1.0.0.tgz",
+  "_shasum": "64a0bb4de4074a2dc36bdfed3590ac0349893dab",
+  "_shrinkwrap": null,
+  "_spec": "sassdoc-theme-herman",
+  "_where": "/Users/williampansky/Sites/pansky-boilerplate",
+  "bugs": {
+    "url": "https://github.com/oddbird/sassdoc-theme-herman/issues"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "cheerio": "^1.0.0-rc.2",
+    "extend": "^3.0.1",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-svg-symbols": "^2.0.2",
+    "html": "^1.0.0",
+    "lunr": "^2.1.5",
+    "markdown-it": "^8.4.0",
+    "markdown-it-named-headers": "^0.0.4",
+    "node-sass": "^4.7.1",
+    "nunjucks": "^2.5.2",
+    "sassdoc-extras": "^2.4.1",
+    "strip-indent": "^2.0.0",
+    "through2": "^2.0.3",
+    "tinycolor2": "^1.4.1",
+    "typogr": "^0.6.7",
+    "vinyl-fs": "^3.0.0"
+  },
+  "description": "An Odd SassDoc theme.",
+  "devDependencies": {
+    "@babel/core": "7.0.0-beta.32",
+    "@babel/polyfill": "7.0.0-beta.32",
+    "@babel/preset-env": "7.0.0-beta.32",
+    "accoutrement-color": "^2.2.2",
+    "accoutrement-init": "^1.1.2",
+    "accoutrement-layout": "^3.0.2",
+    "accoutrement-scale": "^5.0.1",
+    "accoutrement-type": "^3.1.0",
+    "autoprefixer": "^7.2.1",
+    "babel-eslint": "^8.0.3",
+    "babel-loader": "8.0.0-beta.0",
+    "babel-minify-webpack-plugin": "^0.2.0",
+    "babel-plugin-istanbul": "^4.1.5",
+    "browser-sync": "^2.18.13",
+    "chai": "^4.1.2",
+    "chai-jquery": "^2.0.0",
+    "chalk": "^2.3.0",
+    "coveralls": "^3.0.0",
+    "css-loader": "^0.28.7",
+    "del": "^3.0.0",
+    "eslint": "^4.12.1",
+    "eslint-config-prettier": "^2.8.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^4.0.0",
+    "gulp-mocha": "^4.3.1",
+    "gulp-prettier-plugin": "^1.1.0",
+    "gulp-sass-lint": "^1.3.4",
+    "gulp-util": "^3.0.8",
+    "husky": "^0.14.3",
+    "jinja-loader": "^0.0.8",
+    "jquery": "^3.2.1",
+    "jquery-deparam": "^0.5.3",
+    "json-loader": "^0.5.7",
+    "karma": "^1.7.1",
+    "karma-chai-sinon": "^0.1.5",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.1",
+    "karma-junit-reporter": "^1.2.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^2.0.6",
+    "lint-staged": "^6.0.0",
+    "mark.js": "^8.11.0",
+    "matchmedia-polyfill": "^0.3.0",
+    "mocha": "^4.0.1",
+    "nyc": "^11.3.0",
+    "postcss-loader": "^2.0.9",
+    "prettier": "^1.9.1",
+    "sass-loader": "^6.0.6",
+    "sass-true": "^3.0.2",
+    "sassdoc": "^2.5.0",
+    "sinon": "^4.1.1",
+    "sinon-chai": "^2.14.0",
+    "srcdoc-polyfill": "^1.0.0",
+    "webpack": "^3.10.0"
+  },
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-3IB8BitbXGsXx3DtQP/SAgRo50ePVuTLwN0QLfQ0KGiHGE2eOGzKyYp+7X9r54zB+o0mSfXcx+7ZhBfl68BKtw==",
+    "shasum": "64a0bb4de4074a2dc36bdfed3590ac0349893dab",
+    "tarball": "https://registry.npmjs.org/sassdoc-theme-herman/-/sassdoc-theme-herman-1.0.0.tgz"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "gitHead": "90c85b6431d6db1b86f83bfd3215f6e3763bffc8",
+  "homepage": "http://oddbird.net/herman/",
+  "keywords": [
+    "sassdoc-theme"
+  ],
+  "license": "MIT",
+  "lint-staged": {
+    "{lib/,test/}**/*.js": [
+      "prettier --write",
+      "git add"
+    ],
+    "assets/js/{base,init,search}.js": [
+      "prettier --write",
+      "git add"
+    ],
+    "{gulpfile,index,.babelrc,postcss.config,sass-json-loader,webpack.config}.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "maintainers": [
+    {
+      "name": "davisagli",
+      "email": "david@glicksoftware.com"
+    },
+    {
+      "name": "mirisuzanne",
+      "email": "miriam@oddbird.net"
+    },
+    {
+      "name": "carljm",
+      "email": "carl@oddbird.net"
+    },
+    {
+      "name": "jgerigmeyer",
+      "email": "jonny@oddbird.net"
+    }
+  ],
+  "name": "sassdoc-theme-herman",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "sassdoc": "^2.5.0"
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oddbird/sassdoc-theme-herman.git"
+  },
+  "resolutions": {
+    "cdocparser": "github:jgerigmeyer/CDocParser#preserve-nested-comments",
+    "browserslist": ">=2.4.0",
+    "nunjucks": "^2.5.2"
+  },
+  "scripts": {
+    "precommit": "lint-staged"
+  },
+  "title": "Herman",
+  "version": "1.0.0"
+}
