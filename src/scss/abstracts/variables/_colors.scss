@@ -26,14 +26,14 @@
 ///   element { property: $mapName($key, $value); }
 /// ```
 /// 
-/// @name     Colors
+/// @name     color-map
 /// @group    Variables
 /// 
-/// @since    v1.0.0
+/// @since    1.0.0
 /// @access   public
-/// @author   William Pansky
+/// @author   [William Pansky](mailto:william.pansky@sabre.com)
 /// 
-/// @example
+/// @example scss - @function color($color-name, $color-variant:null)
 ///   .foo {
 ///     color: color(primary, base);
 ///   }

@@ -1,0 +1,22 @@
+{
+    "tags": {
+        "allowUnknownTags": false
+    },
+    "recurseDepth": 10,
+    "source": {
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "(node_modules/|docs)"
+    },
+    "opts": {
+        "template": "./docs/theme-docdash/",
+        "encoding": "utf8",
+        "destination": "./docs/gen",
+        "recurse": true,
+        "verbose": true
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    },
+    "tutorials": "./docs/assets/jsdocs/"
+}

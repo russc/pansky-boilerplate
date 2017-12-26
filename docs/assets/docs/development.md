@@ -12,9 +12,9 @@ Our `gulpfile.js` files generally run a collection of the following tasks. See t
 // TASKS => DEFAULT
 gulp.task('default', [ // e.g. CLI command: 'gulp'
     'sass', 
+    'docs', 
     'images', 
     'deploy', 
-    'docs', 
     'watch'
 ], defaultTask);
 defaultTask.description = 'Runs all tasks.';

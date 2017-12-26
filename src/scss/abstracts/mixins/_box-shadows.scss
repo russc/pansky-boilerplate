@@ -5,22 +5,20 @@
 /// Mixin to `@include` Material Design box-shadows to your 
 /// components to simulate depth and elevation; levels 1 - 5.
 /// 
-/// @name     Box Shadow
+/// @name     materialShadow
 /// @group    Mixins
 /// 
-/// @since    v1.0.0
+/// @since    1.0.0
 /// @access   public
 /// @author   [William Pansky](mailto:william.pansky@sabre.com)
 /// 
-/// @example html
-/// ```
+/// @example scss
 ///   .card {
 ///     @include materialShadow(1);
 ///     &:hover, &:focus {
 ///       @include materialShadow(4);
 ///     }
 ///   }
-/// ```
 /// 
 /// @param    {Number} $depth [1] - Determines the depth, or elevation, of your component's box-shadow
 /// 

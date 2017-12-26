@@ -6,14 +6,14 @@
 /// and modals to prevent the document from scrolling while scrolling 
 /// inside said menus or modals.
 /// 
-/// @name     No Scroll
+/// @name     no-scroll
 /// @group    Utilities
 /// 
-/// @since    v1.0.0
+/// @since    1.0.0
 /// @access   public
-/// @author   William Pansky
+/// @author   [William Pansky](mailto:william.pansky@sabre.com)
 /// 
-/// @example js
+/// @example javascript
 ///   document.body.classList.toggle('no-scroll');
 
 .no-scroll {

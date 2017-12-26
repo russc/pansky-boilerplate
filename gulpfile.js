@@ -45,7 +45,8 @@
  * |  |  |- deployTask()
  * |  |  |- exportTask()
  * |  |  |- statsTask()
- * |  |  |- docsTask()
+ * |  |  |- sassdocsTask()
+ * |  |  |- jsdocsTask()
  * |
  * |– LINKS & RESOURCES
  * |  |- ...
@@ -73,6 +74,7 @@ const gulp          = require('gulp'),
     gulpStylelint   = require('gulp-stylelint'),
     gulpif          = require('gulp-if'),
     imagemin        = require('gulp-imagemin'),
+    jsdoc           = require('gulp-jsdoc3'),
     minify          = require('gulp-babel-minify'),
     minimist        = require('minimist'),
     postcss         = require('gulp-postcss'),
@@ -100,6 +102,7 @@ const paths = {
     // source files
     sass:       './src/scss/',
     scripts:    './src/js/',
+    nodes:      './node_modules/',
     amplify:    './src/amplify/',
     funnel:     './src/booking/',
     search:     './src/search/',
@@ -157,11 +160,12 @@ const flags = minimist(
 // ========================================================================
 // TASKS LIST
 // ========================================================================
-gulp.task('default', [ // e.g. CLI command: 'gulp'
+gulp.task('default', [ // e.g. CLI command: 'npm run gulp'
     'sass', 
+    'sassdocs', 
+    'jsdocs', 
     'images', 
     'deploy', 
-    'docs', 
     'watch'
 ], defaultTask);
 gulp.task('deploy',     deployTask);
@@ -170,7 +174,8 @@ gulp.task('images',     imageTask);
 gulp.task('reference',  referenceTask);
 gulp.task('sass',       sassTask);
 gulp.task('stats',      statsTask);
-gulp.task('docs',       docsTask);
+gulp.task('sassdocs',   sassdocsTask);
+gulp.task('jsdocs',     jsdocsTask);
 gulp.task('test',       testTask);
 gulp.task('watch',      watchTask);
 
@@ -187,7 +192,8 @@ imageTask.description       = `Optimizes images in ${paths.img}`;
 referenceTask.description   = '-';
 sassTask.description        = `Run Stylelint and PostCSS, compile Sass, then save to ${paths.sass}`;
 statsTask.description       = 'Analyzes CSS and returns a comprehensive report object.';
-docsTask.description        = 'Parse SCSS and compile SassDoc comments to docs/ dir.';
+sassdocsTask.description    = 'Parse Sass and compile SassDoc to docs/ dir.';
+jsdocsTask.description      = 'Parse JavaScript and compile Documentation.js to docs/ dir.';
 testTask.description        = '-';
 watchTask.description       = 'Watches files for changes, compiles on file saves, and reloads BrowserSync if necessary.';
 
@@ -417,15 +423,16 @@ function statsTask() {
 
 
 // ========================================================================
-// TASK => SASSDOCS
+// TASK => SassDoc Documentation Compiler
 // ========================================================================
-function docsTask() {
+function sassdocsTask() {
     // display cli log msg
-    console.log(color('✅  ', 'WHITE') + color('docsTask()', 'GREEN'));
+    console.log(color('✅  ', 'WHITE') + color('sassdocsTask()', 'GREEN'));
     
-    let docs = './docs/assets/docs';
+    let theme   = 'default';
+    let docs    = './docs/assets/docs';
     let options = {
-        dest: './docs/dist/', 
+        dest: './docs/sass/', 
         verbose: true, 
         display: {
             access: 'public', 
@@ -440,23 +447,33 @@ function docsTask() {
             'utilities':    'Utilities',
             'variables':    'Variables'
         },
-        theme: './docs/theme', 
-        herman: {
-            customCSS: '',
-            extraDocs: [
+        theme: `./docs/theme-${theme}`, 
+        sidebarLinks: [
                 { name: 'Installation',         path: `${docs}/install.md` }, 
                 { name: 'Sass',                 path: `${docs}/sass.md` }, 
                 { name: 'Comment style',        path: `${docs}/comments.md` }, 
                 { name: 'Development pipeline', path: `${docs}/development.md` }, 
                 { name: 'License',              path: './LICENSE.md' }, 
-            ],
-            displayColors: 'hex'
-        },
+        ],
         basePath: 'https://github.com/williampansky/pansky-boilerplate/tree/master/src/scss',
     };
     
     return gulp.src(`${paths.sass}/**/*.scss`)
         .pipe(sassdoc(options));
+}
+
+
+
+// ========================================================================
+// TASK => JSDoc3 Documentation Compiler
+// ========================================================================
+function jsdocsTask() {
+    // display cli log msg
+    console.log(color('✅  ', 'WHITE') + color('jsdocsTask()', 'GREEN'));
+    
+    let config = require('./jsdocs.json');
+    return gulp.src(['./docs/README.md', `${paths.scripts}/**/*.js`], {read: false})
+        .pipe(jsdoc(config));
 }
 
 
@@ -481,6 +498,7 @@ function docsTask() {
  * Gulp If                  https://github.com/robrich/gulp-if
  * Gulp Ignore              https://github.com/robrich/gulp-ignore
  * Gulp Imagemin            https://github.com/sindresorhus/gulp-imagemin
+ * Gulp JSDoc               https://www.npmjs.com/package/gulp-jsdoc3
  * Gulp Rename              https://github.com/hparra/gulp-rename
  * Gulp Sass                https://www.npmjs.com/package/gulp-sass
  * Gulp Size                https://github.com/sindresorhus/gulp-size
@@ -491,6 +509,7 @@ function docsTask() {
  * Gulp Util                https://github.com/gulpjs/gulp-util
  * Gulp Zip                 https://github.com/sindresorhus/gulp-zip
  * Lodash                   https://lodash.com/
+ * JSDoc                    http://usejsdoc.org/
  * Minimist                 https://github.com/substack/minimist
  * PostCSS                  http://postcss.org/
  * SassDoc                  http://sassdoc.com/

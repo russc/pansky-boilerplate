@@ -1,0 +1,174 @@
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs,
+.item__example, 
+.item__code,
+.prettyprint.source,
+.prettyprint code {
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.token.property,
+.token.punctuation,
+.prettyprint .pun {
+  color: #abb2bf;
+}
+
+.hljs-comment, .hljs-quote,
+.token.comment,
+.prettyprint .com {
+  /* color: #5c6370; */
+  color: #7e8592;
+  font-style: italic;
+}
+
+.hljs-doctag, .hljs-keyword, .hljs-formula,
+.token.atrule, .token.attr-value, .token.keyword, .token.important,
+.prettyprint .kwd {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst,
+.token.variable,
+.token.selector,
+.prettyprint .pln,
+.prettyprint .typ {
+  color: #e06c75;
+  background: transparent;
+}
+
+.hljs-literal,
+.prettyprint .req {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string,
+.prettyprint .str {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number,
+.token.selector {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title,
+.token.function {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+pre,
+.text-block pre, 
+[data-sassdoc=hljs],
+:not(pre)>code[class*='language-'], 
+pre[class*='language-'] {
+  border: 1px solid #e0e0e0;
+  background-color: #282c34;
+  transition: 200ms ease-in-out;
+}
+
+.text-block pre:before, 
+[data-sassdoc=hljs]:before {
+  background: linear-gradient(0deg,#282c34 .175rem,rgba(40,44,52,0) .7rem), 
+              linear-gradient(90deg,#282c34 .175rem,rgba(40,44,52,0) .7rem),
+              linear-gradient(180deg,#282c34 .175rem,rgba(40,44,52,0) .7rem), 
+              linear-gradient(270deg,#282c34 .35rem,rgba(40,44,52,0) 2.1rem) 
+              no-repeat scroll;
+}
+
+code[class*='language-'], 
+pre[class*='language-'] {
+  color: #abb2bf;
+  text-shadow: 0 1px #282c34;
+  margin-bottom: 0;
+}
+
+/* markup */
+.token.tag {
+  color: #e06c75;
+}
+
+.token.attr-name,
+.prettyprint .lit {
+  color: #d19a66;
+}
+
+.token.attr-value,
+.token.string {
+  color: #98c379;
+}
+
+.language-javascript {
+  color: #e06c75 !important;
+}
+
+.language-javascript .token.function {
+  color: #56b6c2;
+}
+
+
+:not(pre)>code,
+:not(pre)>kbd,
+:not(pre)>samp {
+  color: #abb2bf;
+  background: #282c34;
+  margin: 0 2px;
+}
+
+
