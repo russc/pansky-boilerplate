@@ -29,7 +29,9 @@ root/
 ```
 
 ### Usage
-`cd` to your project directory and then simply `npm run gulp` in your CLI.
+`cd` to your project directory and then simply `npm run gulp` in your CLI to run through the entire build process of minification, docs compilation, and BrowserSync watching.
+
+If you want to run a single gulp task, such as only re-compiling SassDoc and jsDoc, you can `gulp --tasks` to see all available tasks.
 
 ## SassDoc Annotation Syntax
 Annotation | Description
