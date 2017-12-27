@@ -1,5 +1,5 @@
 # jsDoc Annotation Syntax
-Syntax | Description
+Annotation | Description
 :--- | :---
 @abstract | Identifies members that must be implemented (or overridden) by objects that inherit the member.
 @access | Specify the access level of this member (private, package-private, public, or protected).
