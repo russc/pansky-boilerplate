@@ -1,0 +1,151 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Sass-seed - v1.0.0</title><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- stylesheets --><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><link rel="stylesheet" href="assets/css/uikit.min.css"><link rel="stylesheet" href="assets/css/uikit-theme.min.css"><link rel="stylesheet" href="assets/css/hljs/atom-one-dark.css"><link rel="stylesheet" href="assets/css/custom.css"><!-- Open Graph tags --><meta property="og:title" content="Sass-seed - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>description</p>
+"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><main class="main uk-offcanvas-content" role="main"><aside class="tm-sidebar-left uk-visible@m" role="nav"><section><ul class="uk-nav uk-nav-default tm-nav uk-margin-top" uk-scrollspy-nav="closest: a; scroll: true; offset: 200;"><li class="uk-nav-header nav-icon-flex uk-margin-small-bottom"><span uk-icon="icon: database;"></span> Documentation items</li><li class="uk-parent" data-slug="components"><span class="parent">Components</span><ul class="uk-nav-sub"><li data-group="components" data-name="Button" data-type="css"><a href="#components-css-Button" uk-scroll>Button</a></li></ul></li><li class="uk-parent" data-slug="mixins"><span class="parent">Mixins</span><ul class="uk-nav-sub"><li data-group="mixins" data-name="materialShadow" data-type="mixin"><a href="#mixins-mixin-materialShadow" uk-scroll>materialShadow</a></li><li data-group="mixins" data-name="Example" data-type="mixin"><a href="#mixins-mixin-Example" uk-scroll>Example</a></li></ul></li><li class="uk-parent" data-slug="utilities"><span class="parent">Utilities</span><ul class="uk-nav-sub"><li data-group="utilities" data-name="Display" data-type="css"><a href="#utilities-css-Display" uk-scroll>Display</a></li><li data-group="utilities" data-name="no-scroll" data-type="css"><a href="#utilities-css-no-scroll" uk-scroll>no-scroll</a></li><li data-group="utilities" data-name="svg-fill" data-type="css"><a href="#utilities-css-svg-fill" uk-scroll>svg-fill</a></li></ul><ul class="uk-nav-sub"><li data-group="utilities" data-name="Flex" data-type="variable"><a href="#utilities-variable-Flex" uk-scroll>Flex</a></li></ul></li><li class="uk-parent" data-slug="variables"><span class="parent">Variables</span><ul class="uk-nav-sub"><li data-group="variables" data-name="color-map" data-type="css"><a href="#variables-css-color-map" uk-scroll>color-map</a></li></ul></li></ul></section></aside><header uk-sticky class="uk-navbar-container tm-navbar-container uk-sticky uk-sticky-fixed uk-active uk-sticky-below"><section class="uk-container uk-container-expand"><nav class="uk-navbar"><div class="uk-navbar-left uk-visible@m"><ul class="uk-navbar-nav"><li><a href="../">Sass-seed - 1.0.0</a></li></ul></div><div class="uk-navbar-right"><ul class="uk-navbar-nav uk-visible@m"><li><a href="http://wiki.esitelabs.com:1081/index.php/Sass" target="_blank">Sass Standards [Wiki]</a></li><li><a href="http://wiki.esitelabs.com:1081/index.php" target="_blank">Development [Wiki]</a></li><li><a href="../js/index.html" target="_blank">JavaScript Docs</a></li><li><a href="http://sassdoc.com/annotations/" target="_blank">Annotations Guide</a></li></ul><a uk-navbar-toggle-icon href="#offcanvas" uk-toggle class="uk-navbar-toggle uk-hidden@m uk-navbar-toggle-icon uk-icon"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" ratio="1"><rect y="9" width="20" height="2"></rect><rect y="3" width="20" height="2"></rect><rect y="15" width="20" height="2"></rect></svg></a></div></nav></section></header><section class="tm-main uk-section uk-section-default"><div class="uk-container uk-container-small uk-position-relative"><h1 class="main__heading" id="components" uk-sticky="bottom: true"><div class="container">Components</div></h1><section class="main__sub-section" id="components-css"><article class="uk-section uk-margin-medium-top main__item container item" id="components-css-Button"><header class="uk-flex uk-flex-row uk-flex-wrap uk-flex-middle uk-flex-between uk-width-1-1@m uk-margin-bottom"><h1 class="uk-margin-remove">Button</h1><div class="uk-flex uk-flex-row uk-flex-wrap uk-flex-middle uk-flex-end" data-class="item__details"><span class="uk-text-meta" data-class="item__since">Since 1.0.0</span></div></header><div class="item__code-wrapper" data-type="plain-css"><a href="#Button" uk-toggle><pre class="item__code item__code--togglable language-scss" data-example=".Button { ... }"><code>.Button { ... }</code></pre></a><article id="Button" uk-modal><div class="uk-modal-dialog"><button class="uk-modal-close-default uk-light" type="button" uk-close></button><header class="uk-modal-header"><h2 class="uk-modal-title uk-light uk-text-lowercase">.Button</h2></header><div class="uk-modal-body" uk-overflow-auto><pre class="language-scss">
+<code>.Button {
+  box-sizing: border-box;
+  display: inline-block;
+  border: none;                     // Remove default borders from `button` elems.
+  border-radius: $button-border-radius;
+  color: inherit;                   // Correct `color` prop `button` elems.
+  font: inherit;                    // Correct `font` prop `button` elems.
+  font-size: $button-font-size;
+  line-height: $button-line-height; // [*]
+  text-align: center;               // Align text if button has a width.
+  text-decoration: none;            // Required for `a` elems.
+  text-transform: none;             // Remove the inheritance of in Edge, Firefox, and IE.
+  padding: 0;
+  margin: 0;                        // Remove margins in Chrome, Safari, and Opera.
+  overflow: visible;                // Address `overflow: hidden` in IE.
+  vertical-align: middle;
+
+  /***
+  [*] `line-height` is used to create a height because it also centers the 
+      text vertically for `a class=&quot;button&quot;` elements. Better would be to 
+      use height and flexbox to center the text vertically (`vertical-align`) 
+      but Flexbox doesn&#39;t work in Firefox on button elements.
+  ***/
+
+  // misc. additional props
+  &amp;:not(:disabled) { cursor: pointer; }
+  &amp;:hover { text-decoration: none; }
+  &amp;:focus { outline: none; }
+
+  // Remove the inner border and padding in Firefox.
+  &amp;::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}</code></pre></div><footer class="uk-modal-footer uk-text-right"><h5 class="uk-margin-remove uk-light">components/_buttons.scss</h5></footer></div></article></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p><code>.button</code> contains the base styles. Add additional modifier classes as needed.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-markup"><code>&lt;a class=&quot;button button-primary&quot; href=&quot;#&quot; /&gt;
+&lt;a class=&quot;button button-ghost button-large&quot; href=&quot;#&quot; /&gt;</code></pre></div><dl class="uk-description-list uk-text-small"><dt class="item__sub-heading">Link</dt><dd><a href="https://getuikit.com/">Button styles &amp; core props forked via UIkit</a></dd></dl><dl class="uk-description-list uk-text-small"><dt class="item__sub-heading">Author</dt><dd><p><a href="mailto:william.pansky@sabre.com">William Pansky</a></p></dd></dl></article></section></div></section><section class="tm-main uk-section uk-section-default"><div class="uk-container uk-container-small uk-position-relative"><h1 class="main__heading" id="mixins" uk-sticky="bottom: true"><div class="container">Mixins</div></h1><section class="main__sub-section" id="mixins-mixin"><article class="uk-section uk-margin-medium-top main__item container item" id="mixins-mixin-materialShadow"><header class="uk-flex uk-flex-row uk-flex-wrap uk-flex-middle uk-flex-between uk-width-1-1@m uk-margin-bottom"><h1 class="uk-margin-remove">materialShadow</h1><div class="uk-flex uk-flex-row uk-flex-wrap uk-flex-middle uk-flex-end" data-class="item__details"><span class="uk-text-meta" data-class="item__since">Since 1.0.0</span></div></header><div class="item__code-wrapper" data-type="parameter"><a class="modal-link" href="#materialShadow" uk-toggle><pre class="item__code item__code--togglable language-scss" data-example="@mixin materialShadow($depth: 1) { 
+  @if $depth == 1 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  } @else if $depth == 2 {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  } @else if $depth == 3 {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  } @else if $depth == 4 {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  } @else if $depth == 5 {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  }
+
+  // transition included for &amp;:hover, &amp;:focus effects
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+ }">
+<code>@mixin materialShadow($depth: 1) { ... }</code></pre></a><article id="materialShadow" uk-modal><div class="uk-modal-dialog"><button class="uk-modal-close-default uk-light" type="button" uk-close></button><header class="uk-modal-header"><h2 class="uk-modal-title uk-light">materialShadow</h2></header><div class="uk-modal-body" uk-overflow-auto><pre class="language-scss">
+<code>@mixin materialShadow($depth: 1) { 
+  @if $depth == 1 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  } @else if $depth == 2 {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  } @else if $depth == 3 {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  } @else if $depth == 4 {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  } @else if $depth == 5 {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  }
+
+  // transition included for &amp;:hover, &amp;:focus effects
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+ }</code></pre></div><footer class="uk-modal-footer uk-text-right"><h5 class="uk-margin-remove uk-light">abstracts/mixins/_box-shadows.scss</h5></footer></div></article><a href="https://github.com/williampansky/pansky-boilerplate/tree/master/src/scss/abstracts/mixins/_box-shadows.scss#L29-L44" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Mixin to <code>@include</code> Material Design box-shadows to your components to simulate depth and elevation; levels 1 - 5.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="uk-table uk-table-divider uk-table-hover uk-table-small uk-table-middle uk-table-responsive uk-margin-remove-top" data-class="item__parameters"><thead><tr><th scope="col"><span class="uk-hidden">parameter </span>Name</th><th scope="col"><span class="uk-hidden">parameter </span>Description</th><th scope="col"><span class="uk-hidden">parameter </span>Type</th><th scope="col"><span class="uk-hidden">parameter </span>Default</th></tr></thead><tbody><tr data-class="item__parameter"><td class="uk-text-small" scope="row" data-label="name"><span>$depth</span></td><td class="uk-text-meta" data-label="desc"><p>Determines the depth, or elevation, of your component&#39;s box-shadow</p></td><td class="uk-text-small" data-label="type"><span>Number</span></td><td class="uk-text-small" data-label="default"><span>1</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.card {
+  @include materialShadow(1);
+  &amp;:hover, &amp;:focus {
+    @include materialShadow(4);
+  }
+}</code></pre></div><dl class="uk-description-list uk-text-small"><dt class="item__sub-heading">Links</dt><dd><a href="https://material.io/guidelines/material-design/elevation-shadows.html">Material.io | Elevation &amp; shadows</a></dd><dd><a href="https://codepen.io/sdthornton/pen/wBZdXq">Codepen.io | Material design box shadows via Samuel Thornton</a></dd><dd><a href="https://getuikit.com/">Soft shadows forked via UIkit</a></dd></dl><dl class="uk-description-list uk-text-small"><dt class="item__sub-heading">Author</dt><dd><p><a href="mailto:william.pansky@sabre.com">William Pansky</a></p></dd></dl></article><article class="uk-section uk-margin-medium-top main__item container item" id="mixins-mixin-Example"><header class="uk-flex uk-flex-row uk-flex-wrap uk-flex-middle uk-flex-between uk-width-1-1@m uk-margin-bottom"><h1 class="uk-margin-remove">Example</h1><div class="uk-flex uk-flex-row uk-flex-wrap uk-flex-middle uk-flex-end" data-class="item__details"><span class="uk-text-meta" data-class="item__since">Since 1.0.0</span></div></header><div class="item__code-wrapper" data-type="parameter"><a class="modal-link" href="#Example" uk-toggle><pre class="item__code item__code--togglable language-scss" data-example="@mixin Example() { 
+  display: block;
+ }">
+<code>@mixin Example() { ... }</code></pre></a><article id="Example" uk-modal><div class="uk-modal-dialog"><button class="uk-modal-close-default uk-light" type="button" uk-close></button><header class="uk-modal-header"><h2 class="uk-modal-title uk-light">Example</h2></header><div class="uk-modal-body" uk-overflow-auto><pre class="language-scss">
+<code>@mixin Example() { 
+  display: block;
+ }</code></pre></div><footer class="uk-modal-footer uk-text-right"><h5 class="uk-margin-remove uk-light">abstracts/mixins/_example.scss</h5></footer></div></article><a href="https://github.com/williampansky/pansky-boilerplate/tree/master/src/scss/abstracts/mixins/_example.scss#L23-L25" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This mixin is an example to showcase proper commenting. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed nulla at tellus bibendum tempus. Vivamus convallis ante ut viverra viverra. Duis varius pretium erat.</p></div><h3 class="item__sub-heading">Parameters</h3><div class="item__description"><p class="uk-margin-remove">None.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.foo {
+  @include example(bar);
+}</code></pre></div><dl class="uk-description-list uk-text-small"><dt class="item__sub-heading">Link</dt><dd><a href="https://getuikit.com/">Button &amp; core props forked via UIkit.</a></dd></dl><dl class="uk-description-list uk-text-small"><dt class="item__sub-heading">Author</dt><dd><p><a href="mailto:william.pansky@sabre.com">William Pansky</a></p></dd></dl></article></section></div></section><section class="tm-main uk-section uk-section-default"><div class="uk-container uk-container-small uk-position-relative"><h1 class="main__heading" id="utilities" uk-sticky="bottom: true"><div class="container">Utilities</div></h1><section class="main__sub-section" id="utilities-css"><article class="uk-section uk-margin-medium-top main__item container item" id="utilities-css-Display"><header class="uk-flex uk-flex-row uk-flex-wrap uk-flex-middle uk-flex-between uk-width-1-1@m uk-margin-bottom"><h1 class="uk-margin-remove">Display</h1><div class="uk-flex uk-flex-row uk-flex-wrap uk-flex-middle uk-flex-end" data-class="item__details"></div></header><div class="item__code-wrapper" data-type="plain-css"><a href="#Display" uk-toggle><pre class="item__code item__code--togglable language-scss" data-example=".Display { ... }"><code>.Display { ... }</code></pre></a><article id="Display" uk-modal><div class="uk-modal-dialog"><button class="uk-modal-close-default uk-light" type="button" uk-close></button><header class="uk-modal-header"><h2 class="uk-modal-title uk-light uk-text-lowercase">.Display</h2></header><div class="uk-modal-body" uk-overflow-auto><pre class="language-scss">
+<code>.Display {
+  .display-#{$key} { display: $value !important; }
+}</code></pre></div><footer class="uk-modal-footer uk-text-right"><h5 class="uk-margin-remove uk-light">utilities/_display.scss</h5></footer></div></article></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Classes to apply a single display property override (via <code>!important</code>).</p><pre><code class="lang-css">.display-*:   block, inline-block, flex, initial, inherit, none
+</code></pre></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-markup"><code>&lt;div class=&quot;display-flex&quot; /&gt;</code></pre></div><h3 class="item__sub-heading">Changelog</h3><table class="uk-table uk-table-divider uk-table-hover uk-table-small uk-table-middle uk-table-responsive uk-margin-remove-top" data-class="item__changelog"><thead><tr><th scope="col" class="uk-table-shrink">Ver.</th><th scope="col">Changes</th></tr></thead><tbody><tr data-class="item__changelog"><td class="uk-text-meta" scope="row" data-label="version">1.0.0</td><td class="uk-text-small" scope="row" data-label="no description"></td></tr><tr data-class="item__changelog"><td class="uk-text-meta" scope="row" data-label="version">1.0.1</td><td class="uk-text-small" scope="row" data-label="changes"><p>Added <code>!important</code> to each class.</p></td></tr></tbody></table><dl class="uk-description-list uk-text-small"><dt class="item__sub-heading">Author</dt><dd><p><a href="mailto:william.pansky@sabre.com">William Pansky</a></p></dd></dl></article><article class="uk-section uk-margin-medium-top main__item container item" id="utilities-css-no-scroll"><header class="uk-flex uk-flex-row uk-flex-wrap uk-flex-middle uk-flex-between uk-width-1-1@m uk-margin-bottom"><h1 class="uk-margin-remove">no-scroll</h1><div class="uk-flex uk-flex-row uk-flex-wrap uk-flex-middle uk-flex-end" data-class="item__details"><span class="uk-text-meta" data-class="item__since">Since 1.0.0</span></div></header><div class="item__code-wrapper" data-type="plain-css"><a href="#no-scroll" uk-toggle><pre class="item__code item__code--togglable language-scss" data-example=".no-scroll { ... }"><code>.no-scroll { ... }</code></pre></a><article id="no-scroll" uk-modal><div class="uk-modal-dialog"><button class="uk-modal-close-default uk-light" type="button" uk-close></button><header class="uk-modal-header"><h2 class="uk-modal-title uk-light uk-text-lowercase">.no-scroll</h2></header><div class="uk-modal-body" uk-overflow-auto><pre class="language-scss">
+<code>.no-scroll {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}</code></pre></div><footer class="uk-modal-footer uk-text-right"><h5 class="uk-margin-remove uk-light">utilities/_no-scroll.scss</h5></footer></div></article></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This class is placed on the <code>&lt;body&gt;</code> when opening fullscreen menus and modals to prevent the document from scrolling while scrolling inside said menus or modals.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-javascript"><code>document.body.classList.toggle(&#39;no-scroll&#39;);</code></pre></div><dl class="uk-description-list uk-text-small"><dt class="item__sub-heading">Author</dt><dd><p><a href="mailto:william.pansky@sabre.com">William Pansky</a></p></dd></dl></article><article class="uk-section uk-margin-medium-top main__item container item" id="utilities-css-svg-fill"><header class="uk-flex uk-flex-row uk-flex-wrap uk-flex-middle uk-flex-between uk-width-1-1@m uk-margin-bottom"><h1 class="uk-margin-remove">svg-fill</h1><div class="uk-flex uk-flex-row uk-flex-wrap uk-flex-middle uk-flex-end" data-class="item__details"><span class="uk-text-meta" data-class="item__since">Since 1.0.0</span></div></header><div class="item__code-wrapper" data-type="plain-css"><a href="#svg-fill" uk-toggle><pre class="item__code item__code--togglable language-scss" data-example=".svg-fill { ... }"><code>.svg-fill { ... }</code></pre></a><article id="svg-fill" uk-modal><div class="uk-modal-dialog"><button class="uk-modal-close-default uk-light" type="button" uk-close></button><header class="uk-modal-header"><h2 class="uk-modal-title uk-light uk-text-lowercase">.svg-fill</h2></header><div class="uk-modal-body" uk-overflow-auto><pre class="language-scss">
+<code>.svg-fill {
+  .svg-fill-#{$key} { fill: $value !important; }
+}</code></pre></div><footer class="uk-modal-footer uk-text-right"><h5 class="uk-margin-remove uk-light">utilities/_svg-fill.scss</h5></footer></div></article></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Fill an SVG with a particular color via this utility class.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-markup"><code>&lt;svg class=&quot;svg-fill-secondary&quot; /&gt;</code></pre></div><dl class="uk-description-list uk-text-small"><dt class="item__sub-heading">Author</dt><dd><p><a href="mailto:william.pansky@sabre.com">William Pansky</a></p></dd></dl></article></section><section class="main__sub-section" id="utilities-variable"><article class="uk-section uk-margin-medium-top main__item container item" id="utilities-variable-Flex"><header class="uk-flex uk-flex-row uk-flex-wrap uk-flex-middle uk-flex-between uk-width-1-1@m uk-margin-bottom"><h1 class="uk-margin-remove">Flex</h1><div class="uk-flex uk-flex-row uk-flex-wrap uk-flex-middle uk-flex-end" data-class="item__details"><span class="uk-text-meta" data-class="item__since">Since 1.0.0</span></div></header><div class="item__code-wrapper" data-type="variable"><pre class="item__code language-scss"><code>$Flex: (align-baseline,            align-items,          baseline),
+  (align-center,              align-items,          center),
+  (align-start,               align-items,          flex-start),
+  (align-end,                 align-items,          flex-end),
+  (align-stretch,             align-items,          stretch),
+  (justify-baseline,          justify-content,      baseline),
+  (justify-center,            justify-content,      center),
+  (justify-start,             justify-content,      flex-start),
+  (justify-end,               justify-content,      flex-end),
+  (justify-evenly,            justify-content,      space-evenly),
+  (justify-around,            justify-content,      space-around),
+  (justify-between,           justify-content,      space-between),
+  (justify-stretch,           justify-content,      stretch),
+  (wrap-wrap,                 flex-wrap,            wrap),
+  (wrap-nowrap,               flex-wrap,            nowrap),
+  (wrap-reverse,              flex-wrap,            wrap-reverse),
+  (direction-column,          flex-direction,       column),
+  (direction-column-reverse,  flex-direction,       column-reverse),
+  (direction-row,             flex-direction,       row),
+  (direction-row-reverse,     flex-direction,       row-reverse);</code></pre><a href="https://github.com/williampansky/pansky-boilerplate/tree/master/src/scss/utilities/_flex.scss#L20-L40" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Stackable classes to apply various flex properties.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-css"><code>.display-flex { display: flex !important; }
+.flex-direction-row { flex-direction: row; }
+.flex-align-center { align-items: center; }
+.flex-justify-between { justify-content: space-between; }</code></pre></div><dl class="uk-description-list uk-text-small"><dt class="item__sub-heading">Author</dt><dd><p><a href="mailto:william.pansky@sabre.com">William Pansky</a></p></dd></dl></article></section></div></section><section class="tm-main uk-section uk-section-default"><div class="uk-container uk-container-small uk-position-relative"><h1 class="main__heading" id="variables" uk-sticky="bottom: true"><div class="container">Variables</div></h1><section class="main__sub-section" id="variables-css"><article class="uk-section uk-margin-medium-top main__item container item" id="variables-css-color-map"><header class="uk-flex uk-flex-row uk-flex-wrap uk-flex-middle uk-flex-between uk-width-1-1@m uk-margin-bottom"><h1 class="uk-margin-remove">color-map</h1><div class="uk-flex uk-flex-row uk-flex-wrap uk-flex-middle uk-flex-end" data-class="item__details"><span class="uk-text-meta" data-class="item__since">Since 1.0.0</span></div></header><div class="item__code-wrapper" data-type="plain-css"><a href="#color-map" uk-toggle><pre class="item__code item__code--togglable language-scss" data-example=".color-map { ... }"><code>.color-map { ... }</code></pre></a><article id="color-map" uk-modal><div class="uk-modal-dialog"><button class="uk-modal-close-default uk-light" type="button" uk-close></button><header class="uk-modal-header"><h2 class="uk-modal-title uk-light uk-text-lowercase">.color-map</h2></header><div class="uk-modal-body" uk-overflow-auto><pre class="language-scss">
+<code>.color-map {
+  // color variant is optional
+  @if ($color-variant != null) {
+    @return map-get(map-get($colors, $color-name), $color-variant);
+  } @else {
+    @return map-get($colors, $color-name);
+  }
+}</code></pre></div><footer class="uk-modal-footer uk-text-right"><h5 class="uk-margin-remove uk-light">abstracts/variables/_colors.scss</h5></footer></div></article></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This document contains any and all necessary variables and mapping for this project&#39;s color scheme. Feel free to edit the variables as needed. However, please take care when editing the Sass color map(s).</p><p>Here&#39;s a breakdown of how to access values from inside nested color maps in conjunction with our included function at the end of this file:</p><pre><code class="lang-scss">.foo { color: color(primary, base); }
+  ^      ^      ^      ^      ^
+  1      2      3      4      5
+
+1.  HTML DOM element.
+2.  CSS property selector.
+3.  Sass map selector; this example: color = $colors:( ... );
+4.  Map $key selector; this accesses the &quot;primary&quot; nested map.
+5.  Map $value selector; this accesses the &quot;base&quot; value of our &quot;primary&quot; map.
+</code></pre><p>Another way to think of this function is as follows:</p><pre><code class="lang-scss">  element { property: $mapName($key, $value); }
+</code></pre></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="item-description-wrapper uk-overflow-auto"><div class="item-description token comment" data-class="example__description">//<p>@function color($color-name, $color-variant:null)</p></div><div class="token comment" data-class="example__description">// ========================================================================</div></div><pre class="example__code language-scss example-with-description"><code>.foo {
+  color: color(primary, base);
+}</code></pre></div><dl class="uk-description-list uk-text-small"><dt class="item__sub-heading">Link</dt><dd><a href="https://codepen.io/jakealbaugh/post/using-sass-functions-to-access-complex-variable-maps">[Codepen.io] Using Sass functions to access complex variable maps.</a></dd></dl><dl class="uk-description-list uk-text-small"><dt class="item__sub-heading">Author</dt><dd><p><a href="mailto:william.pansky@sabre.com">William Pansky</a></p></dd></dl></article></section></div></section><hr class="uk-margin-small-bottom"><footer class="tm-main" role="contentinfo"><div class="uk-container uk-container-small"><div class="uk-margin-top uk-margin-bottom"><div class="uk-child-width-auto@m uk-flex-middle uk-flex-between" uk-grid><div><div class="uk-text-left@m uk-text-center"><div class="credits"><span class="powered-by">Powered by&nbsp;</span> <a href="http://sassdoc.com/" target="_blank" class="uk-logo">SassDoc</a></div></div></div><div><div class="uk-text-right@m uk-text-center"><ul class="uk-navbar-nav uk-visible@m"><li><a href="http://wiki.esitelabs.com:1081/index.php/Sass" target="_blank">Sass Standards [Wiki]</a></li><li><a href="http://wiki.esitelabs.com:1081/index.php" target="_blank">Development [Wiki]</a></li><li><a href="../js/index.html" target="_blank">JavaScript Docs</a></li><li><a href="http://sassdoc.com/annotations/" target="_blank">Annotations Guide</a></li></ul></div></div></div></div></div></footer></main><script src="assets/js/jquery-3.2.1.min.js"></script><script src="assets/js/main.min.js"></script><script src="assets/js/uikit.min.js"></script><script src="assets/js/uikit-icons.min.js"></script><script>$.token = $('.token').text().trim();
+    if ($.token == '$') {
+        $('.token').css("color", "blue");
+    }
+    if ($.token == 'rgba') {
+        $('.token').css("color", "red");
+    }</script><script>$(document).ready(function() {
+        $('.modal-link').attr('href', function(_, currentHREF) {
+            return currentHREF.replace(/ /g, '_');
+        });
+
+        $('.uk-modal').attr('id', function(_, currentID) {
+            return currentID.replace(/ /g, '_');
+        });
+    });</script></body></html>

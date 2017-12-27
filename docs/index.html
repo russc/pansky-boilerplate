@@ -6,12 +6,12 @@
         <meta name="description" content="Comply, a free Bootstrap 4 multipurpose template." />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--Bootstrap 4-->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="assets/css/animate.min.css" />
+        <link rel="stylesheet" href="themes/assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="themes/assets/css/animate.min.css" />
         <!--icons-->
-        <link rel="stylesheet" href="assets/css/ionicons.min.css" />
+        <link rel="stylesheet" href="themes/assets/css/ionicons.min.css" />
         <!--custom-->
-        <link rel="stylesheet" href="assets/css/landing.css" />
+        <link rel="stylesheet" href="themes/assets/css/landing.css" />
     </head>
     <body>
         <!--header-->
@@ -39,17 +39,22 @@
         <section class="d-md-flex flex-md-row align-items-md-center justify-content-md-center bg-texture hero" id="main">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-7 col-lg-6 hidden-md-down wow fadeIn">
-                        <img class="img-fluid mx-auto d-block" src="assets/img/sassdoc-preview.jpg"/>
-                    </div>
-                    <div class="col-xl-5 col-lg-6 col-sm-12 text-white wow fadeIn">
-                        <h2 class="pt-4">Compiled <b class="text-dark">source documentation </b> with SassDoc &amp; Herman</h2>
-                        <p class="mt-5">
-                            To help us document our Sass variables, functions, mixins, and placeholders – we utilize <em>SassDoc</em> by Hugo Giraudel and extend its functionality with <em>Herman</em> by Oddbird.
-                        </p>
-                        <p class="mt-5">
-                            <a href="dist/index.html" class="btn btn-white mb-2 page-scroll">View documentation</a>
-                        </p>
+                    <div class="col-sm-12 col-lg-9 m-auto text-center text-white wow fadeIn">
+                        <h1 class="pt-4">Automatic <strong class="text-dark">code documentation</strong> with SassDoc &amp; jsDoc3.</h1>
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                <a href="dist/sass/index.html" class="btn btn-white mt-5 mb-3">View Sass docs</a>
+                                <p class="mt-0">
+                                    To help us document our Sass variables, functions, mixins, and placeholders – we utilize <strong>SassDoc</strong> by Hugo Giraudel.
+                                </p>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <a href="dist/js/index.html" class="btn btn-white mt-5 mb-3">View JS docs</a>
+                                <p class="mt-0">
+                                    For our JavaScript code, we auto generate source documentation with the powerful, and extensive, <strong>jsDoc3</strong>.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,7 +67,7 @@
                     <div class="col-md-8 col-sm-8 offset-sm-2 col-xs-12 text-center wow fadeIn">
                         <h2 class="text-primary">Features</h2>
                         <p class="lead mt-4">
-                            SassDoc parses your source folder to grab documentation-specific comments. From there, it builds a data tree, that gets enhanced and filtered before being passed to the view. So you end up with a fully styled HTML document.
+                            SassDoc &amp; jsDoc both parse our source files to grab documentation-specific comments. From there, the apps build data trees that get enhanced and filtered before being passed to the views. So we end up with fully styled HTML documents that are easily readable and navigable.
                         </p>
                     </div>
                 </div>
@@ -88,7 +93,7 @@
                                 </div>
                                 <h6>Gulp integration</h6>
                                 <p class="text-secondary">
-                                    Our <code>docsTask()</code> recompiles documentation automatically.
+                                    Our <code>docsTask()</code> compiles documentation automatically.
                                 </p>
                             </div>
                         </div>
@@ -99,9 +104,9 @@
                                 <div class="icon-box">
                                     <em class="ion-arrow-graph-up-right icon-md"></em>
                                 </div>
-                                <h6>Extended with Herman</h6>
+                                <h6>Extendedable with plugins</h6>
                                 <p class="text-secondary">
-                                    Herman is built as an extension to SassDoc, and supports all their core functionality with additional support.
+                                    Both apps are plugin-friendly; we can extend our compiled views as needed.
                                 </p>
                             </div>
                         </div>
@@ -114,7 +119,7 @@
             <div class="container-fluid">
                 <div class="row d-md-flex mt-5">
                     <div class="col-sm-6 p-0 wow fadeInLeft">
-                        <img class="img-fluid" src="assets/img/product2.jpg" alt="Gallery">
+                        <img class="img-fluid" src="themes/assets/img/product2.jpg" alt="Gallery">
                     </div>
                     <div class="col-sm-6 pl-5 pr-5 pt-5 pb-4 wow fadeInRight">
                         <h3><a href="#">What's New in Version 5.0?</a></h3>
@@ -136,53 +141,64 @@
 
         <!--sources-->
         <section class="bg-alt" id="team">
-            <div class="container">
+            <div class="container wow FadeIn" data-wow-delay="100ms">
                 <div class="row">
                     <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-12 text-center wow FadeIn">
                         <h2 class="text-primary">Sources</h2>
-                        <p class="lead pt-3">
+                        <p class="lead pt-3 mb-0">
                             Many thanks for making great open-source apps.
                         </p>
                     </div>
                 </div>
                 <div class="row d-md-flex mt-5 text-center">
-                    <div class="team col-sm-4 mt-2 wow fadeIn">
-                        <a href="https://sass-guidelin.es/" target="_blank">
-                            <img src="assets/img/team-1.jpg" alt="Sass Guidelines" class="img-team img-fluid rounded-circle" />
-                            <div class="wow fadeInUp">
-                                <h5>Sass Guidelines</h5>
-                                <p class="mb-0">
-                                    An opinionated styleguide for writing sane, maintainable and scalable Sass.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="team col-sm-4 mt-2 wow fadeIn" data-wow-delay="300ms">
-                        <a href="http://sassdoc.com/" target="_blank">
-                            <img src="assets/img/team-2.jpg" alt="SassDoc" class="img-team img-fluid rounded-circle" />
-                            <div class="wow fadeInUp" data-wow-delay="300ms">
-                                <h5>SassDoc</h5>
-                                <p class="mb-0">
-                                    A documentation system to build pretty and powerful docs in the blink of an eye.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="team col-sm-4 mt-2 wow fadeIn" data-wow-delay="600ms">
-                        <a href="http://oddbird.net/herman/" target="_blank">
-                            <img src="assets/img/team-3.jpg" alt="Herman by Oddbird.net" class="img-team img-fluid rounded-circle" />
-                            <div class="wow fadeInUp" data-wow-delay="600ms">
-                                <h5>Herman</h5>
-                                <p class="mb-0">
-                                    An extension to SassDoc which supports all their core functionality with additional support.
-                                </p>
-                            </div>
-                        </a>
+                    <div class="col-sm-12 wow fadeIn">
+                        <table class="table table-responsive text-left">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="wow fadeIn" data-wow-delay="400ms">
+                                    <th scope="row">
+                                        <a href="http://sassdoc.com/" target="_blank">SassDoc</a>
+                                    </th>
+                                    <td>
+                                        A documentation system to build pretty and powerful docs in the blink of an eye.
+                                    </td>
+                                </tr>
+                                <tr class="wow fadeIn" data-wow-delay="600ms">
+                                    <th scope="row">
+                                        <a href="http://usejsdoc.org/" target="_blank">jsDoc</a>
+                                    </th>
+                                    <td>
+                                        JSDoc 3 is an API documentation generator for JavaScript. You add documentation comments directly to your source code, right alongside the code itself. The JSDoc tool will scan your source code and generate an HTML documentation website for you.
+                                    </td>
+                                </tr>
+                                <tr class="wow fadeIn" data-wow-delay="800ms">
+                                    <th scope="row">
+                                        <a href="http://clenemt.github.io/docdash/" target="_blank">Docdash</a>
+                                    </th>
+                                    <td>
+                                        A clean, responsive documentation template theme for JSDoc 3.
+                                    </td>
+                                </tr>
+                                <tr class="wow fadeIn" data-wow-delay="1000ms">
+                                    <th scope="row">
+                                        <a href="https://wireddots.com" target="_blank">Wired Dots</a>
+                                    </th>
+                                    <td>
+                                        This landing page &copy; 2017 Comply. A Bootstrap 4 multipurpose theme by <a href="https://wireddots.com" target=_"blank">Wired Dots</a>. Developed by <a href="https://twitter.com/attacomsian" target=_"blank">@attacomsian</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </section>
-
+        
         <!--contact-->
         <section class="bg-texture-collage p-0" id="contact">
             <div class="container">
@@ -221,22 +237,19 @@
                             <a href="https://www.linkedin.com/" target="_blank"><em class="ion-social-linkedin text-linkedin-alt icon-sm mr-3"></em></a>
                             <a href="https://plus.google.com/" target="_blank"><em class="ion-social-googleplus text-google-alt icon-sm mr-3"></em></a>
                         </p>
-                        <p class="pt-2 text-muted">
+                        <p class="pt-2 mb-0 text-muted">
                             &copy; 2018 <a href="https://sabrehospitality.com" target=_"blank">Sabre Hospitality Solutions</a>. Developed by <a href="https://shs-dx.slack.com/team/U6DL1263E" target="_blank">@williampansky</a>
-                        </p>
-                        <p class="pt-2 text-muted">
-                            &copy; 2017 Comply. A Bootstrap 4 multipurpose theme by <a href="https://wireddots.com" target=_"blank">Wired Dots</a>. Developed by <a href="https://twitter.com/attacomsian" target=_"blank">@attacomsian</a>
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <script src="assets/js/jquery-3.2.1.min.js"></script>
-        <script src="assets/js/tether.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/jquery.easing.min.js"></script>
-        <script src="assets/js/wow.js"></script>
-        <script src="assets/js/landing.js"></script>
+        <script src="themes/assets/js/jquery-3.2.1.min.js"></script>
+        <script src="themes/assets/js/tether.min.js"></script>
+        <script src="themes/assets/js/bootstrap.min.js"></script>
+        <script src="themes/assets/js/jquery.easing.min.js"></script>
+        <script src="themes/assets/js/wow.js"></script>
+        <script src="themes/assets/js/landing.js"></script>
     </body>
 </html>

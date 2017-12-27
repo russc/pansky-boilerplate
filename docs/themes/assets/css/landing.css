@@ -1,0 +1,371 @@
+/* 
+    Created on : Jul 4, 2017, 12:43:10 AM
+    Author     : Atta-Ur-Rehman Shah (http://attacomsian.com)
+*/
+
+/*Google fonts*/
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700');
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+body{
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    background-color: #FAFAFA;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: 700;
+}
+b, strong{
+    font-weight: 500;
+}
+.brand-logo{
+    width: 180px;
+}
+.navbar{
+    min-height: 80px;
+    transition: all 400ms ease-in-out;
+}
+.navbar.active{
+    background-color: #222;
+}
+.navbar.static{
+    background-color: transparent;
+}
+.navbar-nav .nav-item .nav-link{
+    font-weight: 500;
+}
+.navbar-brand {
+    font-weight: 700;
+}
+.navbar-inverse .navbar-nav .nav-link, .navbar .navbar-brand, .navbar-toggler span {
+    color: rgba(255,255,255,.8);
+}
+.navbar .nav-item .active, .navbar .nav-link:hover,.navbar .nav-link:focus, .navbar .navbar-brand:hover{
+    color: #fff !important;
+}
+.sticky-navigation{
+    top: 0px;
+    background-color: transparent;
+}
+.hero{
+    height: 100vh;
+    min-height: 500px;
+    padding: 100px 0;
+}
+.hero .brand{
+    margin-top: 100px;
+}
+@media (max-width: 768px){
+    .hero .brand {
+        margin-top: 0px; 
+    }
+}
+.store-img
+{
+    width: 170px;
+}
+.hero h1{
+    font-weight: 100;
+} 
+.hero h1 b{
+    font-weight: 700;
+} 
+a {
+    color: #e50000;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+a:hover,
+a:focus {
+    color: #e50000 !important;
+    outline: 0;
+    text-decoration: none !important;
+}
+section{
+    padding: 80px 0px;
+}
+.img-team{
+    width: 150px;
+    box-shadow: 3px 2px 3px rgba(0, 0, 0, 0.15);
+    -webkit-transition: 350ms ease all;
+    transition: 350ms ease all;
+}
+.img-team:hover{
+    box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.15);
+}
+.team h5{
+    padding: 35px 0 15px 0;
+    font-weight: 500;
+}
+.team p{
+    color: #999;
+}
+.card-outline-primary{
+    border: solid 1px #e50000;
+}
+.small-xl{
+    font-size: 90%;
+}
+.small-xs{
+    font-size: 70%;
+}
+/*===============================================
+* Background Colors
+================================================*/
+.bg-texture{
+    background: transparent -webkit-radial-gradient(circle farthest-side at right bottom, #9e0303 5%, #c00b0b 25%, #e50000 80%, #ee1919 98%) repeat scroll 0% 0%;
+    background: transparent -o-radial-gradient(circle farthest-side at right bottom, #9e0303 5%, #c00b0b 25%, #e50000 80%, #ee1919 98%) repeat scroll 0% 0%;
+    background: transparent -moz-radial-gradient(circle farthest-side at right bottom, #9e0303 5%, #c00b0b 25%, #e50000 80%, #ee1919 98%) repeat scroll 0% 0%;
+    background: transparent radial-gradient(circle farthest-side at right bottom, #9e0303 5%, #c00b0b 25%, #e50000 80%, #ee1919 98%) repeat scroll 0% 0%;
+}
+.bg-texture-collage{
+    background: -webkit-linear-gradient(-45deg, #e50000 36%, transparent 0%), 
+                linear-gradient(-45deg, #c00b0b 62%, transparent 33%), 
+                linear-gradient(-45deg, #ee1919 100%, transparent 67%);
+
+    background: -moz-linear-gradient(-45deg, #e50000 36%, transparent 0%), 
+                linear-gradient(-45deg, #c00b0b 62%, transparent 33%), 
+                linear-gradient(-45deg, #ee1919 100%, transparent 67%);
+
+    background: linear-gradient(-45deg, #e50000 36%, transparent 0%), 
+                linear-gradient(-45deg, #c00b0b 62%, transparent 33%), 
+                linear-gradient(-45deg, #ee1919 100%, transparent 67%);
+}
+.bg-alt {
+    background-color: #fff;
+}
+.bg-faded{
+    background-color: #FAFAFA;
+}
+.bg-primary{
+    background-color: #e50000 !important;
+}
+.bg-footer{
+    background-color: #222;
+}
+/*===============================================
+* Text Colors
+================================================*/
+.text-faded {
+    color: #FAFAFA;
+}
+.text-dark {
+    color: #37474F;
+}
+.text-muted{
+    color: #999 !important;
+}
+.text-white {
+    color: #fff;
+}
+.text-primary {
+    color: #e50000 !important;
+}
+.text-primary-light {
+    color: #f86262;
+}
+
+/*===============================================
+* Icon Sizes
+================================================*/
+.icon-lg {
+    font-size: 60px;
+    line-height: 18px;
+}
+.icon-md {
+    font-size: 50px;
+    line-height: 14px;
+}
+.icon-sm {
+    font-size: 30px;
+    line-height: 14px;
+}
+/*===============================================
+* Colored Buttons
+================================================*/
+.btn{
+    box-shadow: 3px 2px 3px rgba(0, 0, 0, 0.15);
+    -webkit-transition: 350ms ease all;
+    transition: 350ms ease all;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: .6rem 1.5rem;
+}
+.btn:hover, .btn:focus {
+    box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.15);
+}
+.btn-white {
+    color: #e50000 !important;
+    background-color: #fff;
+    border-color: #fff;
+}
+.btn-white:hover{
+    color: #fff !important;
+    background-color: #222;
+    border-color: #222;
+}
+.btn-primary{
+    background-color: #e50000 !important;
+    border-color: #e50000 !important;
+}
+.btn-primary:hover, .btn-primary:focus{
+    color: #fff !important;
+}
+.btn-radius{
+    border-radius: 50px;
+}
+/*===============================================
+* Borders Utilities
+================================================*/
+.border-none{
+    border: none !important;
+    border-color: transparent !important;
+}
+.border-all{
+    border: 1px solid #DEE5E5 !important;
+}
+.border-left {
+    border-left: 1px solid #DEE5E5 !important;
+}
+.border-right {
+    border-right: 1px solid #DEE5E5 !important;
+}
+.border-top{
+    border-top: 1px solid #DEE5E5 !important;
+}
+.border-bottom{
+    border-bottom: 1px solid #DEE5E5 !important;
+}
+/*===============================================
+* Social Icons
+================================================*/
+.text-twitter-alt, .text-facebook-alt, .text-linkedin-alt, .text-google-alt, .text-github-alt {
+    color:#e50000;
+}
+.text-twitter, .text-twitter-alt:hover{
+    /* color:#00aced; */
+    color:#fff;
+}
+.text-facebook, .text-facebook-alt:hover{
+    /* color: #3b5998; */
+    color:#fff;
+}
+.text-google, .text-google-alt:hover{
+    /* color: #dd4b39; */
+    color:#fff;
+}
+.text-linkedin, .text-linkedin-alt:hover{
+    /* color: #007bb6; */
+    color:#fff;
+}
+.text-github, .text-github-alt:hover{
+    /* color: #000000; */
+    color:#fff;
+}
+/*===============================================
+* Cards
+================================================*/
+.card{
+    border: none;
+    margin-bottom: 30px;
+}
+.card .card-block .icon-box{
+    padding: 20px 0;
+    color: #e50000;
+}
+.card .card-block h6{
+    padding-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.card:hover{
+    box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.15);
+}
+/*
+Pricing tables & lists
+*/
+.pricing-list {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.pricing-list li {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+.list-default {
+    list-style: none;
+    padding-left: 25px;
+}
+.list-default > li {
+    position: relative;
+    padding: 6px 0;
+    line-height: 1.55em;
+    font-size: 0.94rem;
+}
+.list-default > li:before {
+    content: "\f21b";
+    position: absolute;
+    left: -25px;
+    top: 8px;
+    font-size: 10px;
+    color: #e50000;
+    font-family: "Ionicons";
+}
+::selection {
+    color: #fff;
+    text-shadow: none;
+    background: #e50000;
+}
+/* utils */
+.no-shadow {
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+.no-shadow:hover,
+.no-shadow:focus {
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+.no-bg {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+/* overrides */
+.text-secondary {
+    color: #666;
+}
+.text-dark {
+    color: #222;
+}
+.fa-slack {
+    width: 50px;
+    filter: invert(100%);
+}
+#team a:hover,
+#team a:focus {
+    color: #222 !important;
+}
+#contact a,
+#contact a:visited {
+    color: rgba(255,255,255,0.65);
+}
+#contact a:hover,
+#contact a:focus {
+    color: #fff !important;
+}
+#connect a,
+#connect a:visited {
+    color: rgba(255,255,255,0.65);
+}
+#connect a:hover,
+#connect a:focus {
+    color: #fff !important;
+}
+.table th { border-top: 0; }
+.table th[scope="row"] { white-space: nowrap; }

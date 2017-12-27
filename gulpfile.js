@@ -100,19 +100,20 @@ const localhost = 'project.localhost';
 // Paths
 const paths = {
     // source files
-    sass:       './src/scss/',
-    scripts:    './src/js/',
-    nodes:      './node_modules/',
-    amplify:    './src/amplify/',
-    funnel:     './src/booking/',
-    search:     './src/search/',
-    offer:      './src/offer-search/',
+    root:       '.',
+    sass:       'src/scss/',
+    scripts:    'src/js/',
+    nodes:      'node_modules/',
+    amplify:    'src/amplify/',
+    funnel:     'src/booking/',
+    search:     'src/search/',
+    offer:      'src/offer-search/',
 
     // distribution (production-ready) files
-    css:        './dist/css/',
-    js:         './dist/js/',
-    img:        './dist/images/',
-    booking:    './dist/booking/'
+    css:        'dist/css/',
+    js:         'dist/js/',
+    img:        'dist/images/',
+    booking:    'dist/booking/'
 };
 
 // Entry Points
@@ -125,11 +126,11 @@ const bundledEntryPointPaths = {
 
 // Additionals
 const additionalJsFiles = [
-    './dist/js/index.js',
-    './dist/js/special.js',
-    './dist/js/shared/**/*.js',
-    './dist/**/*.js',
-    './dist/**/*.html'
+    'dist/js/index.js',
+    'dist/js/special.js',
+    'dist/js/shared/**/*.js',
+    'dist/**/*.js',
+    'dist/**/*.html'
 ];
 
 // Browser Support
@@ -162,8 +163,7 @@ const flags = minimist(
 // ========================================================================
 gulp.task('default', [ // e.g. CLI command: 'npm run gulp'
     'sass', 
-    'sassdocs', 
-    'jsdocs', 
+    'docs', 
     'images', 
     'deploy', 
     'watch'
@@ -174,8 +174,7 @@ gulp.task('images',     imageTask);
 gulp.task('reference',  referenceTask);
 gulp.task('sass',       sassTask);
 gulp.task('stats',      statsTask);
-gulp.task('sassdocs',   sassdocsTask);
-gulp.task('jsdocs',     jsdocsTask);
+gulp.task('docs',       docsTask);
 gulp.task('test',       testTask);
 gulp.task('watch',      watchTask);
 
@@ -187,24 +186,26 @@ gulp.task('watch',      watchTask);
 // tasks
 defaultTask.description     = 'Runs all tasks.';
 deployTask.description      = 'Bundles all JS/HTML assets into entry point *.min.js bundles.';
+docsTask.description        = 'Parse Sass and JavaScript, then compile generated documentation to the docs/ dir.';
 exportTask.description      = 'ZIPs all files relevant for security testing (excludes conf and vendor).';
 imageTask.description       = `Optimizes images in ${paths.img}`;
+jsdocsTask.description      = 'Parse JavaScript and compile Documentation.js to docs/ dir.';
 referenceTask.description   = '-';
 sassTask.description        = `Run Stylelint and PostCSS, compile Sass, then save to ${paths.sass}`;
-statsTask.description       = 'Analyzes CSS and returns a comprehensive report object.';
 sassdocsTask.description    = 'Parse Sass and compile SassDoc to docs/ dir.';
-jsdocsTask.description      = 'Parse JavaScript and compile Documentation.js to docs/ dir.';
+statsTask.description       = 'Analyzes CSS and returns a comprehensive report object.';
 testTask.description        = '-';
 watchTask.description       = 'Watches files for changes, compiles on file saves, and reloads BrowserSync if necessary.';
 
 // task flags
-sassTask.flags = {
-    default: ' 🏁  Output style is compressed and minified.',
-    '--dev': ' 🏁  Output style is expanded and uses sourcemaps.',
-};
 imageTask.flags = {
     default: ' 🏁  Compress images.',
     '--dev': ' 🏁  Skips image compression.',
+};
+
+sassTask.flags = {
+    default: ' 🏁  Output style is compressed and minified.',
+    '--dev': ' 🏁  Output style is expanded and uses sourcemaps.',
 };
 
 
@@ -231,12 +232,12 @@ function defaultTask() {
 }
 
 function testTask() {
-  return gulp.src('./node_modules/backstopjs/gulpfile.js')
+  return gulp.src('node_modules/backstopjs/gulpfile.js')
       .pipe(chug({ tasks: ['test'] }));
 }
 
 function referenceTask() {
-  return gulp.src('./node_modules/backstopjs/gulpfile.js')
+  return gulp.src('node_modules/backstopjs/gulpfile.js')
       .pipe(chug({ tasks: ['reference'] }));
 }
 
@@ -423,16 +424,21 @@ function statsTask() {
 
 
 // ========================================================================
-// TASK => SassDoc Documentation Compiler
+// TASK => SassDoc & jsDoc Source-Comment Documentation Compiler
 // ========================================================================
+function docsTask() {
+    sassdocsTask();
+    jsdocsTask();
+}
+
 function sassdocsTask() {
     // display cli log msg
     console.log(color('✅  ', 'WHITE') + color('sassdocsTask()', 'GREEN'));
     
-    let theme   = 'default';
-    let docs    = './docs/assets/docs';
+    let themes_dir = 'docs/themes';
+    let docs_dir = 'docs/assets/docs';
     let options = {
-        dest: './docs/sass/', 
+        dest: 'docs/dist/sass/', 
         verbose: true, 
         display: {
             access: 'public', 
@@ -447,12 +453,12 @@ function sassdocsTask() {
             'utilities':    'Utilities',
             'variables':    'Variables'
         },
-        theme: `./docs/theme-${theme}`, 
+        theme: `${themes_dir}/sassdoc`, 
         sidebarLinks: [
-                { name: 'Installation',         path: `${docs}/install.md` }, 
-                { name: 'Sass',                 path: `${docs}/sass.md` }, 
-                { name: 'Comment style',        path: `${docs}/comments.md` }, 
-                { name: 'Development pipeline', path: `${docs}/development.md` }, 
+                { name: 'Installation',         path: `${docs_dir}/install.md` }, 
+                { name: 'Sass',                 path: `${docs_dir}/sass.md` }, 
+                { name: 'Comment style',        path: `${docs_dir}/comments.md` }, 
+                { name: 'Development pipeline', path: `${docs_dir}/development.md` }, 
                 { name: 'License',              path: './LICENSE.md' }, 
         ],
         basePath: 'https://github.com/williampansky/pansky-boilerplate/tree/master/src/scss',
@@ -471,8 +477,8 @@ function jsdocsTask() {
     // display cli log msg
     console.log(color('✅  ', 'WHITE') + color('jsdocsTask()', 'GREEN'));
     
-    let config = require('./jsdocs.json');
-    return gulp.src(['./docs/README.md', `${paths.scripts}/**/*.js`], {read: false})
+    let config = require(`${paths.root}/jsdocs.json`);
+    return gulp.src(['docs/README.md', `${paths.scripts}/**/*.js`], {read: false})
         .pipe(jsdoc(config));
 }
 

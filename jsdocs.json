@@ -8,9 +8,9 @@
         "excludePattern": "(node_modules/|docs)"
     },
     "opts": {
-        "template": "./docs/theme-docdash/",
+        "template": "docs/themes/docdash/",
         "encoding": "utf8",
-        "destination": "./docs/gen",
+        "destination": "docs/dist/js",
         "recurse": true,
         "verbose": true
     },
@@ -18,5 +18,5 @@
         "cleverLinks": false,
         "monospaceLinks": false
     },
-    "tutorials": "./docs/assets/jsdocs/"
+    "tutorials": "docs/assets/jsdocs/"
 }
