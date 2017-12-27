@@ -100,9 +100,11 @@ const localhost = 'project.localhost';
 // Paths
 const paths = {
     // source files
-    root:       '.',
+    root:       './',
+    source:     'src/',
     sass:       'src/scss/',
     scripts:    'src/js/',
+    docs:       'docs/',
     nodes:      'node_modules/',
     amplify:    'src/amplify/',
     funnel:     'src/booking/',
@@ -163,6 +165,7 @@ const flags = minimist(
 // ========================================================================
 gulp.task('default', [ // e.g. CLI command: 'npm run gulp'
     'sass', 
+    'scripts', 
     'docs', 
     'images', 
     'deploy', 
@@ -172,6 +175,7 @@ gulp.task('deploy',     deployTask);
 gulp.task('export',     exportTask);
 gulp.task('images',     imageTask);
 gulp.task('reference',  referenceTask);
+gulp.task('scripts',    scriptsTask);
 gulp.task('sass',       sassTask);
 gulp.task('stats',      statsTask);
 gulp.task('docs',       docsTask);
@@ -186,14 +190,13 @@ gulp.task('watch',      watchTask);
 // tasks
 defaultTask.description     = 'Runs all tasks.';
 deployTask.description      = 'Bundles all JS/HTML assets into entry point *.min.js bundles.';
-docsTask.description        = 'Parse Sass and JavaScript, then compile generated documentation to the docs/ dir.';
+docsTask.description        = `Parse Sass and JavaScript source files, then compile generated documentation to the ${paths.docs} dir.`;
 exportTask.description      = 'ZIPs all files relevant for security testing (excludes conf and vendor).';
 imageTask.description       = `Optimizes images in ${paths.img}`;
-jsdocsTask.description      = 'Parse JavaScript and compile Documentation.js to docs/ dir.';
 referenceTask.description   = '-';
-sassTask.description        = `Run Stylelint and PostCSS, compile Sass, then save to ${paths.sass}`;
-sassdocsTask.description    = 'Parse Sass and compile SassDoc to docs/ dir.';
-statsTask.description       = 'Analyzes CSS and returns a comprehensive report object.';
+sassTask.description        = `Run Stylelint and PostCSS, compile ${paths.sass} files, then save to ${paths.css}`;
+scriptsTask.description     = '@TODO: Add JS concat and minification via Webpack to repo';
+statsTask.description       = 'Analyze and return a comprehensive report object of your CSS.';
 testTask.description        = '-';
 watchTask.description       = 'Watches files for changes, compiles on file saves, and reloads BrowserSync if necessary.';
 
@@ -351,6 +354,17 @@ function watchTask() {
             // if --bs is active, reload browser after .js compile
             if (flags.bs) { browserSync.reload(event); }
         });
+}
+
+
+
+// ========================================================================
+// TASK => SCRIPTS
+// ========================================================================
+function scriptsTask() {
+    // display cli log msg
+    // console.log(color('✅  ', 'WHITE') + color('scriptsTask()', 'GREEN'));
+    console.log(color('❌  ', 'RED') + color('@TODO: Add JS concat and minification via Webpack to repo', 'RED'));
 }
 
 
