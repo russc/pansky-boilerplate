@@ -1,6 +1,36 @@
 # Readme
 Seed repository for proper Sass and JavaScript coding standards, best practices, proper commenting, and file architecture.
 
+### Installation
+Download and extract the ZIP or clone this repo to your project and then rename the folder accordingly to your needs (e.g: `assets/`). The directory structure is as follows:
+
+```
+root/
+|
+|-- dist/ ------------------ Distribution folder of production-ready assets
+|  |-- css/ ---------------- Minified CSS files
+|  |-- js/ ----------------- Minified JS files
+|
+|-- docs/ ------------------ Documentation folder; see index.html file
+|  |-- dist/
+|  |  |-- js/ -------------- Auto-generated endpoint directory for jsDoc
+|  |  |-- sass/ ------------ Auto-generated endpoint directory for SassDoc
+|  |-- themes/
+|  |  |-- assets/ ---------- Doc-specific assets for our index.html page
+|  |  |-- docdash/ --------- Docdash theme for jsDoc
+|  |  |-- herman/ ---------- Herman theme for SassDoc [deprecated]
+|  |  |-- sassdoc/ --------- SassDoc's default theme with custom extensions
+|
+|-- src/ ------------------- Source file directory; i.e. working files
+|  |-- js/ ----------------- Root JavaScript file directory
+|  |-- scss/ --------------- Root Sass file directory
+|
+| ...
+```
+
+### Usage
+`cd` to your project directory and then simply `npm run gulp` in your CLI.
+
 ### SassDoc Syntax
 Syntax | Description
 :--- | :---
